@@ -1,35 +1,36 @@
+
 # include "TXLib.h"
 # include <stdlib.h>
 
-void TitleScreen      ();
-void TitleFrameDraw   (int x);
-void TitleTextDraw    (int t);
+void TitleScreen ();
+void TitleFrameDraw (int x);
+void TitleTextDraw (int t);
 
-void BeginScreen      ();
-void ForestDraw       (int t);
-void GladeDraw        (int t);
-void SubtitlesDraw    (int x, int y, const char text[]);
+void BeginScreen ();
+void ForestDraw (int t);
+void GladeDraw (int t);
+void SubtitlesDraw (int x, int y, const char text[]);
 void BackGroundBeginScreen ();
 
-void CenterScreen     ();
-void BearMove         ();
+void CenterScreen ();
+void BearMove ();
 void BearNoseEvesMove ();
 void BackGroundCenterScreen ();
 
-void FinishScreen     ();
-void HoneySteal       (int x, int y);
-void BeeComeOutHome   ();
+void FinishScreen ();
+void HoneySteal (int x, int y);
+void BeeComeOutHome ();
 void BackGroundFinishScreen ();
 
-void ScreamScreen     ();
+void ScreamScreen ();
 
-void BeeFly           (int x, int y, double size);
+void BeeFly ();
 
-void ForeGroundDraw   ();
+void ForeGroundDraw ();
 
-void BearDraw (int x     , int y, double size,
+void BearDraw (int x, int y, double size,
                COLORREF colorEye, double dBetweenEyes, double radiusEyes,
-               int noseY ,
+               int noseY,
                int dBetweenEars,
                int dChestMove,
                int lHandX, int lHandY,
@@ -40,7 +41,8 @@ void BearDraw (int x     , int y, double size,
 void TreeOneDraw (int x,  int y, double size,
                   double inclineX,
                   int widthTree, int heigthTree,
-                  int pxLine   , int colorLine , int colorTree);
+                  int pxLine,
+                  int colorLine, int colorTree);
 
 void HomeDraw    (double x, double y, int heightRoof,
                   int widthWindow, int heightWindow,
@@ -49,9 +51,9 @@ void HomeDraw    (double x, double y, int heightRoof,
 void FlowerDraw  (int x, int y, double size,
                   COLORREF colorPetal, COLORREF colorCenter);
 
-void BushDraw    (int x, int y, double size);
-void BeeDraw     (int x, int y, double size);
-void BarrelDraw  (double x, double y, double size);
+void BushDraw (int x, int y, double size);
+void BeeDraw  (int x, int y, double size);
+void BarrelDraw (double x, double y, double size);
 void BeeHomeDraw (int x, int y, double size);
 void BeeHomeFinishDraw (int x, int y, double size);
 
@@ -61,67 +63,66 @@ int main ()
     txCreateWindow (1200, 700);
     txBegin ();
 
-    TitleScreen ();
-    BeginScreen ();
+    //TitleScreen ();
+    //BeginScreen ();
     CenterScreen ();
-    FinishScreen ();
-    ScreamScreen ();
+    //FinishScreen ();
+    //ScreamScreen ();
 
     txEnd ();
-
     return 0;
     }
 
-//++============================================================================
+//============================================================================
 void TitleScreen ()
     {
-    txSetColor     (TX_BLACK);
+    txSetColor (TX_BLACK);
     txSetFillColor (TX_BLACK);
-    txClear        ();
+    txClear ();
 
     TitleFrameDraw (50);
 
     int t = 0;
     while (t != 350)
         {
-        txSetColor     (TX_BLACK);
+        txSetColor (TX_BLACK);
         txSetFillColor (TX_BLACK);
-        txClear        ();
+        txClear ();
 
         TitleFrameDraw (50);
-        TitleTextDraw  (t);
+        TitleTextDraw (t);
 
-        txSleep        (100);
+        txSleep (100);
         t += 50;
         }
 
-    txSleep      (200);
+    txSleep (200);
     txSetColor   (TX_YELLOW);
     txSelectFont ("Bookman Old Style", 30);
     txTextOut    (350, 350, "невероятные приключения медвежонка Мишки");
-    txSleep      (500);
+    txSleep (500);
 
     txSetColor   (TX_WHITE);
     txSelectFont ("Monotype Corsiva", 30);
     txTextOut    (360, 450, "автор: Фионина Людмила (Самара, 2021)");
-    txSleep      (1000);
+    txSleep (1000);
     }
 
-//++----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 void TitleFrameDraw (int x)
     {
-    txSetColor     (TX_YELLOW, 3);
-    txLine (       x  ,       x*2,        x+150,       x*2);
-    txLine (1200 - x  ,       x*2, 1200 - x-150,       x*2);
-    txLine (       x  , 700 - x*2,        x+150, 700 - x*2);
-    txLine (1200 - x  , 700 - x*2, 1200 - x-150, 700 - x*2);
+    txSetColor (TX_YELLOW, 3);
+    txLine (       x,         x*2,        x+150,       x*2);
+    txLine (1200 - x,         x*2, 1200 - x-150,       x*2);
+    txLine (       x,   700 - x*2,        x+150, 700 - x*2);
+    txLine (1200 - x,   700 - x*2, 1200 - x-150, 700 - x*2);
 
-    txLine (       x*2,       x  ,        x*2  ,       x+150);
-    txLine (1200 - x*2,       x  , 1200 - x*2  ,       x+150);
-    txLine (       x*2, 700 - x  ,        x*2  , 700 - x-150);
-    txLine (1200 - x*2, 700 - x  , 1200 - x*2  , 700 - x-150);
+    txLine (       x*2,       x,          x*2,         x+150);
+    txLine (1200 - x*2,       x,   1200 - x*2,         x+150);
+    txLine (       x*2, 700 - x,          x*2,   700 - x-150);
+    txLine (1200 - x*2, 700 - x,   1200 - x*2,   700 - x-150);
 
-    txSetColor     (TX_LIGHTCYAN);
+    txSetColor (TX_LIGHTCYAN);
     txSetFillColor (TX_LIGHTCYAN);
     txCircle (       (x + x/2),       (x + x/2), 15);
     txCircle (1200 - (x + x/2),       (x + x/2), 15);
@@ -129,7 +130,7 @@ void TitleFrameDraw (int x)
     txCircle (1200 - (x + x/2), 700 - (x + x/2), 15);
     }
 
-//++----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 void TitleTextDraw  (int t)
     {
     txSetColor   (TX_YELLOW);
@@ -138,67 +139,69 @@ void TitleTextDraw  (int t)
     txTextOut    (1200 - 260-t, 250, "И С Т О Р И Я");
     }
 
-//??============================================================================
+//============================================================================
 void BeginScreen ()
     {
     txSetColor     (TX_BLACK);
     txSetFillColor (TX_BLACK);
-    txClear        ();
+    txClear ();
 
     SubtitlesDraw  (180, 590, "В одном лесу...");
-    txSleep        (500);
+    txSleep (500);
 
     ForestDraw     (200);
 
     SubtitlesDraw  (180, 590, "В одном лесу...  стоит теремок...");
-    txSleep        (500);
+    txSleep (500);
 
     HomeDraw       (800, 350, 150, 160, 90, 1);
-    txSleep        (500);
+    txSleep (500);
 
     SubtitlesDraw  (180, 590, "Вокруг теремка на полянке красота...");
-    txSleep        (500);
+    txSleep (500);
     GladeDraw      (  0);
-    txSleep        (500);
+    txSleep (1000);
 
     SubtitlesDraw  (180, 590, "Пчёлки летают, медок собирают...");
-    txSleep        (500);
+    txSleep (500);
 
-    // ??? полет пчелы мерцает
-    BeeFly  (150, 250, 1);
+    BeeFly ();
+    txSleep (500);
     }
 
-//++----------------------------------------------------------------------------
-void ForestDraw (int t)
+//----------------------------------------------------------------------------
+void ForestDraw (int tSleep)
     {
-    int i = 45;
-    while (i <= 700)
+    int t = 45;
+    while (t <= 700)
         {
-        TreeOneDraw (50 + i, 50 + i%2*10, i%2 + 1, i%100/25 * 10, 50 + i%10, i%35 + 10, 2,  50, i%80);
-        i += 75;
-        txSleep (t);
+        TreeOneDraw (50 + t, 50 + t%2*10, t%2 + 1, t%100/25 * 10 , 50 + t%10, t%35 + 10, 2,  50, t%80);
+        t += 75;
+        if (tSleep != 0)
+            txSleep (tSleep);
         }
     }
 
-//++----------------------------------------------------------------------------
-void GladeDraw (int t)
+//----------------------------------------------------------------------------
+void GladeDraw (int tSleep)
     {
     int stepBush = 210;
     while (stepBush <= 700)
         {
         BushDraw    (500 + stepBush, 350 + stepBush%2*10, stepBush%2 + 1 );
         stepBush += 75;
-        txSleep(t);
+        if (tSleep != 0)
+            txSleep (tSleep);
         }
 
-    for (int i = 1; i <= 5; i++)
+    for (int flowerX = 1; flowerX <= 5; flowerX++)
         {
-        FlowerDraw  (100 + i/2*70, 350, 1.3, TX_LIGHTMAGENTA, TX_ORANGE      );
-        FlowerDraw  (140 + i/2*50, 380, 1  , TX_LIGHTCYAN   , TX_YELLOW      );
-        FlowerDraw  ( 80 + i/2*90, 420, 1  , TX_YELLOW      , TX_LIGHTMAGENTA);
-        FlowerDraw  (905 + i/2*95, 555, 1.5, TX_BLUE        , TX_ORANGE      );
-        FlowerDraw  (900 + i/3*95, 600, 1  , TX_LIGHTMAGENTA, TX_ORANGE      );
-        FlowerDraw  (800 + i/2*70, 570, 1.2, TX_WHITE       , TX_YELLOW      );
+        FlowerDraw  (100 + flowerX/2*70, 350, 1.3, TX_LIGHTMAGENTA, TX_ORANGE      );
+        FlowerDraw  (140 + flowerX/2*50, 380, 1  , TX_LIGHTCYAN   , TX_YELLOW      );
+        FlowerDraw  ( 80 + flowerX/2*90, 420, 1  , TX_YELLOW      , TX_LIGHTMAGENTA);
+        FlowerDraw  (905 + flowerX/2*95, 555, 1.5, TX_BLUE        , TX_ORANGE      );
+        FlowerDraw  (900 + flowerX/3*95, 600, 1  , TX_LIGHTMAGENTA, TX_ORANGE      );
+        FlowerDraw  (800 + flowerX/2*70, 570, 1.2, TX_WHITE       , TX_YELLOW      );
         }
 
     BeeHomeDraw (630, 450, 1);
@@ -206,32 +209,55 @@ void GladeDraw (int t)
     BeeHomeDraw (580, 510, 2);
     }
 
-//++----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 void SubtitlesDraw  (int x, int y, const char text[])
     {
     txSetColor     (TX_BLACK);
     txSetFillColor (TX_BLACK);
-    txRectangle    (x     , y     , x + 500, y + 65);
+    txRectangle    (x,      y,      x + 500, y + 65);
     txSetColor     (TX_YELLOW);
     txSelectFont   ("Bookman Old Style", 40);
     txTextOut      (x + 10, y + 15, text);
     }
 
-//??----------------------------------------------------------------------------
-void BeeFly (int x, int y, double size)
+//----------------------------------------------------------------------------
+void BeeFly ()
     {
     txBegin ();
-    int step =  5;
+    int vX = 5;
     int t = 0;
-    while (t <= 10)
+    while (t <= 11)
         {
-        BeeDraw        (x + step*t, y + step*(t%2), size);
-        txSleep        (150);
+        BeeDraw (150 + vX*t, 250 + vX*(t%2), 1  );
+        BeeDraw (250 - vX*t, 350 + vX*(t%2), 1  );
+        BeeDraw (800 + vX*t, 450 + vX*(t%2), 1.5);
+        BeeDraw (950 - vX*t, 550 + vX*(t%2), 1.2);
+        BeeDraw (900 + vX*t, 500 + vX*(t%2), 1.5);
+        txSleep (150);
 
         txSetFillColor (TX_BLACK);
-        txClear        ();
+        txClear ();
+
         BackGroundBeginScreen ();
-        SubtitlesDraw  (180, 590, "Пчёлки летают, медок собирают...");
+        SubtitlesDraw (180, 590, "Пчёлки летают, медок собирают...");
+
+        t++;
+        }
+    t = 0;
+    while (t <= 11)
+        {
+        BeeDraw (200 - vX*t, 250 + vX*(t%2), 1  );
+        BeeDraw (200 + vX*t, 350 + vX*(t%2), 1  );
+        BeeDraw (850 - vX*t, 450 + vX*(t%2), 1.5);
+        BeeDraw (900 + vX*t, 550 + vX*(t%2), 1.2);
+        BeeDraw (950 - vX*t, 500 + vX*(t%2), 1.5);
+        txSleep (150);
+
+        txSetFillColor (TX_BLACK);
+        txClear ();
+
+        BackGroundBeginScreen ();
+        SubtitlesDraw (180, 590, "Пчёлки летают, медок собирают...");
 
         t++;
         }
@@ -243,18 +269,18 @@ void CenterScreen ()
     {
     txSetColor     (TX_BLACK);
     txSetFillColor (TX_BLACK);
-    txClear        ();
+    txClear ();
 
     BackGroundCenterScreen ();
 
-    SubtitlesDraw  (580, 590, "Жил в теремке медвежонок Мишка...");
-    txSleep        (200);
+    SubtitlesDraw (580, 590, "Жил в теремке медвежонок Мишка...");
+    txSleep (500);
 
-    BearMove       ();
+    BearMove ();
     BearNoseEvesMove ();
     }
 
-//++----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 void BackGroundCenterScreen ()
     {
     HomeDraw    (900, 250, 150, 160, 90, 0.7);
@@ -271,7 +297,7 @@ void BackGroundCenterScreen ()
     FlowerDraw  (300, 660, 1.2, TX_YELLOW      , TX_WHITE);
     }
 
-//++----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 void BearMove ()
     {
     txBegin ();
@@ -282,14 +308,14 @@ void BearMove ()
     while (t <= 55)
         {
         txSetFillColor (TX_BLACK);
-        txClear  ();
+        txClear ();
         BackGroundCenterScreen ();
         SubtitlesDraw  (580, 590, "Любил Мишка медок и часто...");
 
         BarrelDraw (850+25*sizeBear - t*5, 220+50*sizeBear + t*5, sizeBear/2);
         BearDraw   (850             - t*5, 220             + t*5, sizeBear, TX_YELLOW, 0, 1, 0, 30, 5, 25, 0, 25, 0, 21, 42 + t%10, 19, 47 - t%10);
 
-        txSleep    (100);
+        txSleep    (300);
 
         t += 5;
         sizeBear += 0.1;
@@ -304,15 +330,15 @@ void BearNoseEvesMove ()
     txBegin ();
 
     txSetFillColor (TX_BLACK);
-    txClear  ();
+    txClear        ();
     BackGroundCenterScreen ();
-    SubtitlesDraw  (580, 590, "Воровал его у пчелок...");
+    SubtitlesDraw  (580, 590, "воровал его у пчелок...");
     BarrelDraw     (850 + 25*2.1 - 55*5, 220 + 50*2.1 + 55*5, 2.1/2);
 
     int t = 0;
     while (t <= 5)
         {
-        BearDraw   (850          - 55*5, 220          + 55*5, 2.1, TX_YELLOW, 0, t%2 + 0.3, t%2 * 5, 30, 5, 25, 0, 25, 0, 21, 42 + 55%10, 19, 47 - 55%10);
+        BearDraw   (850 - 55*5, 220 + 55*5, 2.1, TX_YELLOW, 0, t%2 + 0.3, t%2 * 5, 30, 5, 25, 0, 25, 0, 21, 42 + 55%10, 19, 47 - 55%10);
         txSleep    (300);
         t += 1;
         }
@@ -361,7 +387,7 @@ void HoneySteal (int x, int y)
         {
         txSetColor     (TX_BLACK);
         txSetFillColor (TX_BLACK);
-        txClear        ();
+        txClear ();
 
         BackGroundFinishScreen ();
         txSetFillColor (RGB (252, 252, 108));
@@ -371,7 +397,7 @@ void HoneySteal (int x, int y)
             }
         else
             {
-            txEllipse (x + t%4*80, y          , x + t%4*80 + 50, y          + 30);
+            txEllipse (x + t%4*80, y,           x + t%4*80 + 50, y          + 30);
             }
         POINT star[6] = {{760, 540 - t/4  },
                          {774, 540 - t/4*5},
@@ -424,7 +450,7 @@ void BeeComeOutHome   ()
 
 
 //++============================================================================
-void ScreamScreen     ()
+void ScreamScreen ()
     {
     txSetColor     (TX_BLACK);
     txSetFillColor (TX_BLACK);
@@ -479,7 +505,7 @@ void ScreamScreen     ()
     txSleep(1000);
     }
 
-//+----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 void BackGroundBeginScreen ()
     {
     ForestDraw  (0);
