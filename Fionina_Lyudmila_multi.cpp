@@ -32,7 +32,8 @@ void BackGroundFinishScreen ();
 
 void ScreamScreen ();
 
-void BeeFly ();
+void BeeFly();
+void BeeMove (int vX, int vY, int xBeeOne, int xBeeTwo, int xBeeTree, int xBeeFour, int xBeeFive);
 
 void ForeGroundDraw ();
 
@@ -48,7 +49,7 @@ void BearDraw (int x, int y, double size,
 
 void TreeOneDraw (int x,  int y, double size,
                   double inclineX,
-                  int widthTree, int heigthTree,
+                  int widthTree, int heightTree,
                   int pxLine,
                   int colorLine, int colorTree);
 
@@ -82,12 +83,12 @@ int main ()
     {
     txCreateWindow (1200, 700);
 
-    TitleScreen ();
+    //TitleScreen ();
     BeginScreen ();
-    CenterScreen ();
-    FinishScreen ();
-    ScreamScreen ();
-    FinalScreen ();
+    //CenterScreen ();
+    //FinishScreen ();
+    //ScreamScreen ();
+    //FinalScreen ();
 
     return 0;
     }
@@ -235,19 +236,27 @@ void SubTitlesDraw (int x, int y,
     txSelectFont   (nameFont, sizeFont);
     txTextOut      (x + 10, y + 15, text);
     }
+
 //----------------------------------------------------------------------------
 void BeeFly ()
     {
+    BeeMove (+5, 5, 150, 250, 800, 950, 900);
+    BeeMove (-5, 5, 200, 200, 850, 900, 950);
+    }
+
+//----------------------------------------------------------------------------
+void BeeMove (int vX, int vY, int xBeeOne, int xBeeTwo, int xBeeTree, int xBeeFour, int xBeeFive)
+    {
     txBegin ();
-    int vX = 5;
+
     int t = 0;
     while (t <= 11)
         {
-        BeeDraw (150 + vX*t, 250 + vX*(t%2), 1  );
-        BeeDraw (250 - vX*t, 350 + vX*(t%2), 1  );
-        BeeDraw (800 + vX*t, 450 + vX*(t%2), 1.5);
-        BeeDraw (950 - vX*t, 550 + vX*(t%2), 1.2);
-        BeeDraw (900 + vX*t, 500 + vX*(t%2), 1.5);
+        BeeDraw (xBeeOne  + vX*t, 250 + vY*(t%2), 1  );
+        BeeDraw (xBeeTwo  - vX*t, 350 + vY*(t%2), 1  );
+        BeeDraw (xBeeTree + vX*t, 450 + vY*(t%2), 1.5);
+        BeeDraw (xBeeFour - vX*t, 550 + vY*(t%2), 1.2);
+        BeeDraw (xBeeFive + vX*t, 500 + vY*(t%2), 1.5);
         txSleep (150);
 
         ClearScreen();
@@ -257,26 +266,9 @@ void BeeFly ()
 
         t++;
         }
-    t = 0;
-    while (t <= 11)
-        {
-        BeeDraw (200 - vX*t, 250 + vX*(t%2), 1  );
-        BeeDraw (200 + vX*t, 350 + vX*(t%2), 1  );
-        BeeDraw (850 - vX*t, 450 + vX*(t%2), 1.5);
-        BeeDraw (900 + vX*t, 550 + vX*(t%2), 1.2);
-        BeeDraw (950 - vX*t, 500 + vX*(t%2), 1.5);
-        txSleep (150);
 
-        ClearScreen();
-
-        BackGroundBeginScreen ();
-        SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "ѕчЄлки летают, медок собирают...");
-
-        t++;
-        }
     txEnd();
     }
-
 //============================================================================
 void CenterScreen ()
     {
@@ -822,7 +814,7 @@ void BearDraw (int x, int y, double size,
 
     txSetColor     (TX_RED);
     txSetFillColor (TX_RED);
-    txEllipse (x - 2*size, y - 15*size,     x + 2*size, y - 8*size);
+    txEllipse (x - 2*size, y - 15*size, x + 2*size, y - 8*size);
 
     txSetColor     (RGB (255, 255, 255));
     txSetFillColor (RGB (177, 101, 54));
@@ -840,29 +832,29 @@ void BearDraw (int x, int y, double size,
     }
 
 //----------------------------------------------------------------------------
-void TreeOneDraw (int x, int y, double size, double inclineX, int widthTree, int heigthTree,
+void TreeOneDraw (int x, int y, double size, double inclineX, int widthTree, int heightTree,
                   int pxLine, int colorLine, int colorTree)
     {
     txSetColor     (RGB (0, 255-colorLine, 0), pxLine);
     txSetFillColor (RGB (0, 255-colorTree, 0)        );
-    txLine (x + inclineX,         y                    , x - widthTree/2*size, y + heigthTree*size  );
-    txLine (x + inclineX,         y                    , x + widthTree/2*size, y + heigthTree*size  );
-    txLine (x - widthTree/2*size, y + heigthTree*size  , x + widthTree/2*size, y + heigthTree*size  );
-    txFloodFill (x, y + heigthTree*size-5);
+    txLine (x + inclineX,         y,                     x - widthTree/2*size, y + heightTree*size  );
+    txLine (x + inclineX,         y,                     x + widthTree/2*size, y + heightTree*size  );
+    txLine (x - widthTree/2*size, y + heightTree*size,   x + widthTree/2*size, y + heightTree*size  );
+    txFloodFill (x, y + heightTree*size-5);
 
-    txLine (x + inclineX/2,       y + heigthTree*size  , x - widthTree/2*size, y + heigthTree*2*size);
-    txLine (x + inclineX/2,       y + heigthTree*size  , x + widthTree/2*size, y + heigthTree*2*size);
-    txLine (x - widthTree/2*size, y + heigthTree*2*size, x + widthTree/2*size, y + heigthTree*2*size);
-    txFloodFill (x, y + heigthTree/2*3*size);
+    txLine (x + inclineX/2,       y + heightTree*size,   x - widthTree/2*size, y + heightTree*2*size);
+    txLine (x + inclineX/2,       y + heightTree*size,   x + widthTree/2*size, y + heightTree*2*size);
+    txLine (x - widthTree/2*size, y + heightTree*2*size, x + widthTree/2*size, y + heightTree*2*size);
+    txFloodFill (x, y + heightTree/2*3*size);
 
-    txLine (x + inclineX/4,       y + heigthTree*2*size, x + widthTree/2*size, y + heigthTree*3*size);
-    txLine (x + inclineX/4,       y + heigthTree*2*size, x - widthTree/2*size, y + heigthTree*3*size);
-    txLine (x - widthTree/2*size, y + heigthTree*3*size, x + widthTree/2*size, y + heigthTree*3*size);
-    txFloodFill (x, y + heigthTree/2*5*size);
+    txLine (x + inclineX/4,       y + heightTree*2*size, x + widthTree/2*size, y + heightTree*3*size);
+    txLine (x + inclineX/4,       y + heightTree*2*size, x - widthTree/2*size, y + heightTree*3*size);
+    txLine (x - widthTree/2*size, y + heightTree*3*size, x + widthTree/2*size, y + heightTree*3*size);
+    txFloodFill (x, y + heightTree/2*5*size);
 
     txSetColor     (RGB (177, 101, 54));
     txSetFillColor (RGB (177, 101, 54));
-    txRectangle (x - widthTree/5*size, y + heigthTree*3*size+1, x + widthTree/5*size, y + heigthTree*3*size+heigthTree/5);
+    txRectangle (x - widthTree/5*size, y + heightTree*3*size+1, x + widthTree/5*size, y + heightTree*3*size+heightTree/5);
     }
 
 //----------------------------------------------------------------------------
@@ -998,8 +990,8 @@ void FlowerDraw (int x, int y, double size, COLORREF colorPetal, COLORREF colorC
     txLine    (x,           y,           x,           y - 48*size);
 
     txSetFillColor (RGB (20, 198, 50));
-    txEllipse (x - 13*size, y - 23*size, x          , y - 20*size);
-    txEllipse (x + 13*size, y - 13*size, x          , y - 10*size);
+    txEllipse (x - 13*size, y - 23*size, x,           y - 20*size);
+    txEllipse (x + 13*size, y - 13*size, x,           y - 10*size);
 
     txSetColor     (RGB (250, 220, 240));
     txSetFillColor (colorPetal);
