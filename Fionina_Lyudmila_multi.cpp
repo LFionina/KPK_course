@@ -1,3 +1,8 @@
+//{=============================================================================
+//             (с) Фионина Людмила Евгеньевна, г. Самара, 2021
+//                 Задание: мультфильм "Медовая история"
+//}=============================================================================
+
 # include "TXLib.h"
 # include <stdlib.h>
 
@@ -9,6 +14,10 @@ void BeginScreen ();
 void ForestDraw (int t);
 void GladeDraw (int t);
 void SubtitlesDraw (int x, int y, const char text[]);
+void SubTitlesDraw (int x, int y,
+                    int sizeFont, const char nameFont[],
+                    COLORREF colorFont,
+                    const char text[]);
 void BackGroundBeginScreen ();
 
 void CenterScreen ();
@@ -66,6 +75,8 @@ void CupTee (int x, int y, int orientation);
 void BearPawRight (int y);
 void BeePawLeft (int y);
 
+void ClearScreen();
+
 //----------------------------------------------------------------------------
 int main ()
     {
@@ -84,9 +95,7 @@ int main ()
 //============================================================================
 void TitleScreen ()
     {
-    txSetColor (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txClear ();
+    ClearScreen();
 
     TitleFrameDraw (50);
 
@@ -105,14 +114,10 @@ void TitleScreen ()
         }
 
     txSleep (200);
-    txSetColor   (TX_YELLOW);
-    txSelectFont ("Bookman Old Style", 30);
-    txTextOut    (350, 350, "невероятные приключения медвежонка Мишки");
+    SubTitlesDraw (350, 350, 30, "Bookman Old Style", TX_YELLOW, "невероятные приключения медвежонка Мишки");
     txSleep (500);
 
-    txSetColor   (TX_WHITE);
-    txSelectFont ("Monotype Corsiva", 30);
-    txTextOut    (360, 450, "автор: Фионина Людмила (Самара, 2021)");
+    SubTitlesDraw (360, 450, 30, "Bookman Old Style", TX_WHITE, "автор: Фионина Людмила (Самара, 2021)");
     txSleep (1000);
     }
 
@@ -150,27 +155,27 @@ void TitleTextDraw  (int t)
 //============================================================================
 void BeginScreen ()
     {
-    txSetColor     (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txClear ();
+    ClearScreen();
 
-    SubtitlesDraw  (180, 590, "В одном лесу...");
+    SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "В одном лесу...");
     txSleep (500);
 
-    ForestDraw     (200);
+    ForestDraw (200);
 
-    SubtitlesDraw  (180, 590, "В одном лесу...  стоит теремок...");
+    SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "В одном лесу...   стоит теремок...");
     txSleep (500);
 
-    HomeDraw       (800, 350, 150, 160, 90, 1);
+    HomeDraw  (800, 350, 150, 160, 90, 1);
     txSleep (500);
 
-    SubtitlesDraw  (180, 590, "Вокруг теремка на полянке красота...");
+    SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "Вокруг теремка на полянке красота...");
     txSleep (500);
-    GladeDraw      (  0);
+
+    GladeDraw (  0);
     txSleep (1000);
 
-    SubtitlesDraw  (180, 590, "Пчёлки летают, медок собирают...");
+
+    SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "Пчёлки летают, медок собирают...");
     txSleep (500);
 
     BeeFly ();
@@ -217,17 +222,19 @@ void GladeDraw (int tSleep)
     BeeHomeDraw (580, 510, 2);
     }
 
-//----------------------------------------------------------------------------
-void SubtitlesDraw  (int x, int y, const char text[])
+//-----------------------------------------------------------------------------
+void SubTitlesDraw (int x, int y,
+                    int sizeFont, const char nameFont[],
+                    COLORREF colorFont,
+                    const char text[])
     {
     txSetColor     (TX_BLACK);
     txSetFillColor (TX_BLACK);
-    txRectangle    (x,      y,      x + 500, y + 65);
-    txSetColor     (TX_YELLOW);
-    txSelectFont   ("Bookman Old Style", 40);
+    txRectangle    (x, y, x + 500, y + 65);
+    txSetColor     (colorFont);
+    txSelectFont   (nameFont, sizeFont);
     txTextOut      (x + 10, y + 15, text);
     }
-
 //----------------------------------------------------------------------------
 void BeeFly ()
     {
@@ -243,11 +250,10 @@ void BeeFly ()
         BeeDraw (900 + vX*t, 500 + vX*(t%2), 1.5);
         txSleep (150);
 
-        txSetFillColor (TX_BLACK);
-        txClear ();
+        ClearScreen();
 
         BackGroundBeginScreen ();
-        SubtitlesDraw (180, 590, "Пчёлки летают, медок собирают...");
+        SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "Пчёлки летают, медок собирают...");
 
         t++;
         }
@@ -261,11 +267,10 @@ void BeeFly ()
         BeeDraw (950 - vX*t, 500 + vX*(t%2), 1.5);
         txSleep (150);
 
-        txSetFillColor (TX_BLACK);
-        txClear ();
+        ClearScreen();
 
         BackGroundBeginScreen ();
-        SubtitlesDraw (180, 590, "Пчёлки летают, медок собирают...");
+        SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "Пчёлки летают, медок собирают...");
 
         t++;
         }
@@ -275,16 +280,15 @@ void BeeFly ()
 //============================================================================
 void CenterScreen ()
     {
-    txSetColor     (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txClear ();
+    ClearScreen();
 
     BackGroundCenterScreen ();
 
-    SubtitlesDraw (580, 590, "Жил в теремке медвежонок Мишка...");
+    SubTitlesDraw (580, 590, 30, "Bookman Old Style", TX_YELLOW, "Жил в теремке медвежонок Мишка...");
     txSleep (500);
 
     BearMove ();
+
     BearNoseEvesMove ();
     }
 
@@ -318,7 +322,8 @@ void BearMove ()
         txSetFillColor (TX_BLACK);
         txClear ();
         BackGroundCenterScreen ();
-        SubtitlesDraw  (580, 590, "Любил Мишка медок и часто...");
+
+        SubTitlesDraw (580, 590, 30, "Bookman Old Style", TX_YELLOW, "Любил Мишка медок и часто...");
 
         BarrelDraw (850+25*sizeBear - t*5, 220+50*sizeBear + t*5, sizeBear/2);
         BearDraw   (850             - t*5, 220             + t*5, sizeBear, TX_YELLOW, 0, 1, 0, 30, 5, 25, 0, 25, 0, 21, 42 + t%10, 19, 47 - t%10);
@@ -337,10 +342,12 @@ void BearNoseEvesMove ()
     {
     txBegin ();
 
-    txSetFillColor (TX_BLACK);
-    txClear        ();
+    ClearScreen();
+
     BackGroundCenterScreen ();
-    SubtitlesDraw  (580, 590, "воровал его у пчелок...");
+
+    SubTitlesDraw (580, 590, 30, "Bookman Old Style", TX_YELLOW, "воровал его у пчелок...");
+
     BarrelDraw     (850 + 25*2.1 - 55*5, 220 + 50*2.1 + 55*5, 2.1/2);
 
     int t = 0;
@@ -357,9 +364,7 @@ void BearNoseEvesMove ()
 //============================================================================
 void FinishScreen ()
     {
-    txSetColor     (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txClear        ();
+    ClearScreen();
 
     HoneySteal     (555, 455);
     BeeComeOutHome ();
@@ -393,11 +398,10 @@ void HoneySteal (int x, int y)
 
     while (t < 13)
         {
-        txSetColor     (TX_BLACK);
-        txSetFillColor (TX_BLACK);
-        txClear ();
+        ClearScreen();
 
         BackGroundFinishScreen ();
+
         txSetFillColor (RGB (252, 252, 108));
         if (t % 4 == 3)
             {
@@ -407,13 +411,13 @@ void HoneySteal (int x, int y)
             {
             txEllipse (x + t%4*80, y,           x + t%4*80 + 50, y          + 30);
             }
-        POINT star[6] = {{760, 540 - t/4  },
+        POINT honey[6] = {{760, 540 - t/4  },
                          {774, 540 - t/4*5},
                          {810, 540 - t/4*4},
                          {846, 540 - t/4*5},
                          {864, 540 - t/4  },
                          {760, 540 - t/4  }};
-        txPolygon (star, 6);
+        txPolygon (honey, 6);
 
         txSleep (550);
         t++;
@@ -434,16 +438,16 @@ void BeeComeOutHome   ()
         txClear        ();
 
         BackGroundFinishScreen ();
-        SubtitlesDraw  (910, 590, "...ж-ж-Ж-Ж-ж-ж...");
+        SubTitlesDraw (910, 590, 30, "Bookman Old Style", TX_YELLOW, "...ж-ж-Ж-Ж-ж-ж...");
 
         txSetFillColor (RGB (252, 252, 108));
-        POINT star[6] = {{760, 540},
+        POINT honey[6] = {{760, 540},
                          {774, 535},
                          {810, 530},
                          {846, 535},
                          {864, 540},
                          {760, 540}};
-        txPolygon (star, 6);
+        txPolygon (honey, 6);
 
         txSetColor     (TX_RED);
         txSetFillColor (TX_RED);
@@ -459,36 +463,22 @@ void BeeComeOutHome   ()
 //============================================================================
 void ScreamScreen ()
     {
-    txSetColor     (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txClear        ();
+    ClearScreen();
 
-    txSetColor     (TX_LIGHTRED);
-    txSelectFont   ("Bookman Old Style", 140);
-    txTextOut      (500, 350, "A-A-A-Й");
+    SubTitlesDraw (500, 350, 140, "Bookman Old Style", TX_LIGHTRED, "A-A-A-Й");
     txSleep(1000);
 
-    txSetColor     (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txClear        ();
+    ClearScreen();
 
-    txSetColor     (TX_WHITE);
-    txSelectFont   ("Arial", 180);
-    txTextOut      (200, 150, "O-O-o-й");
+    SubTitlesDraw (200, 150, 180, "Arial", TX_WHITE, "O-O-o-й");
     txSleep(1000);
 
-    txSetColor     (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txClear        ();
+    ClearScreen();
 
-    txSetColor     (TX_YELLOW);
-    txSelectFont   ("Cornier New", 140);
-    txTextOut      (250, 200, "По-мо-ги-те...");
+    SubTitlesDraw (250, 200, 140, "Cornier New", TX_YELLOW, "По-мо-ги-те...");
     txSleep(1000);
 
-    txSetColor     (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txClear        ();
+    ClearScreen();
 
     BackGroundFinishScreen ();
 
@@ -506,9 +496,7 @@ void ScreamScreen ()
     txCircle (640, 398,  6);
     txSleep(500);
 
-    txSetColor     (TX_YELLOW);
-    txSelectFont   ("Bookman Old Style", 50);
-    txTextOut      (800, 400, "Я больше не буду...");
+    SubTitlesDraw (800, 400, 50, "Bookman Old Style", TX_YELLOW, "Я больше не буду...");
     txSleep(1000);
     }
 
@@ -522,9 +510,8 @@ void BackGroundBeginScreen ()
 //============================================================================
 void FinalScreen ()
     {
-    txSetColor     (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txClear        ();
+    ClearScreen();
+
     HomeBackground (90);
 
     BearHeadDraw (300, 350, 6);
@@ -534,13 +521,11 @@ void FinalScreen ()
     TeeDrink  ();
     txSleep (500);
 
-    txSetColor     (TX_BLACK);
-    txSetFillColor (TX_BLACK);
-    txClear        ();
+    ClearScreen();
+
     TitleFrameDraw (50);
-    txSetColor     (TX_YELLOW);
-    txSelectFont   ("Bookman Old Style", 100);
-    txTextOut      (400, 300, "К О Н Е Ц");
+
+    SubTitlesDraw (400, 300, 100, "Bookman Old Style", TX_YELLOW, "К О Н Е Ц");
     txSleep (500);
     }
 
@@ -580,18 +565,21 @@ void BearHeadDraw (int x, int y, double size)
     txSetFillColor (RGB (177, 101, 54));
     txCircle (x - 15*size, y - 43*size, 10*size);
     txCircle (x + 15*size, y - 43*size, 10*size);
+
     txSetFillColor (RGB (238, 209, 111));
     txCircle (x - 14*size, y - 42*size,  8*size);
     txCircle (x + 14*size, y - 42*size,  8*size);
+
     txSetFillColor (RGB (177, 101, 54));
     txCircle (x,           y - 25*size, 25*size);
 
     txSetFillColor (TX_YELLOW);
-    txCircle (x -  8*size, y - 33*size,  4*size);
-    txCircle (x +  8*size, y - 33*size,  4*size);
+    txCircle (x - 8*size, y - 33*size,  4*size);
+    txCircle (x + 8*size, y - 33*size,  4*size);
+
     txSetFillColor (RGB (0, 0, 0));
-    txCircle (x -  8*size, y - 31*size,  2*size);
-    txCircle (x +  8*size, y - 31*size,  2*size);
+    txCircle (x - 8*size, y - 31*size,  2*size);
+    txCircle (x + 8*size, y - 31*size,  2*size);
 
     txSetColor     (RGB (0, 0, 0));
     txLine (x - 5*size, y - 25*size, x + 5*size, y - 25*size);
@@ -617,12 +605,12 @@ void BeeHeadDraw (int x, int y, int size)
     txCircle (x, y + 22*size, 25*size);
 
     txSetFillColor (RGB (255, 255, 0));
-    POINT star[5] = {{x - 20*size, y + 7*size     },
+    POINT body[5] = {{x - 20*size, y + 7*size     },
                      {x + 20*size, y + 7*size     },
                      {x + 22*size, y + 7*size + 25},
                      {x - 22*size, y + 7*size + 25},
                      {x - 20*size, y + 7*size     }};
-    txPolygon (star, 5);
+    txPolygon (body, 5);
     txRectangle (x - 24*size, y + 20*size, x + 24*size, y + 20*size +25);
 
     txSetColor     (RGB (50, 50, 0),2);
@@ -634,6 +622,7 @@ void BeeHeadDraw (int x, int y, int size)
     txEllipse(x - 11*size, y - 50*size, x + 11*size, y - 50*size + 35);
     txCircle (x - 30, y - 60*size, 2*size);
     txCircle (x + 30, y - 60*size, 2*size);
+
     txSetColor     (RGB (50, 50, 0),4);
     txLine (x - 30, y - 60*size, x - 5, y - 24*size*2 );
     txLine (x + 30, y - 60*size, x + 5, y - 24*size*2 );
@@ -641,6 +630,7 @@ void BeeHeadDraw (int x, int y, int size)
     txSetFillColor (TX_YELLOW);
     txCircle (x -  8*size, y - 33*size,  4*size);
     txCircle (x +  8*size, y - 33*size,  4*size);
+
     txSetFillColor (RGB (0, 0, 0));
     txCircle (x -  8*size, y - 31*size,  2*size);
     txCircle (x +  8*size, y - 31*size,  2*size);
@@ -709,9 +699,7 @@ void TableDraw ()
     txSetFillColor (RGB (177, 101, 54));
     txCircle (300 - 20*6, 360 + 8*6, 10*5);
 
-    txSetColor     (TX_BLACK);
-    txSelectFont   ("Bookman Old Style", 50);
-    txTextOut      (100, 645, "И стали они жить дружно, мед кушать и сказки слушать...");
+    SubTitlesDraw (100, 645, 50, "Bookman Old Style", TX_BLACK, "И стали они жить дружно, мед кушать и сказки слушать...");
     }
 
 //-----------------------------------------------------------------------------
@@ -808,32 +796,33 @@ void BearDraw (int x, int y, double size,
     {
     txSetColor     (TX_WHITE);
     txSetFillColor (RGB (177, 101, 54));
-    txCircle (x - dBetweenEars/2    *size, y - 43*size, 10*size);
-    txCircle (x + dBetweenEars/2    *size, y - 43*size, 10*size);
+    txCircle (x - (dBetweenEars/2  )*size, y - 43*size, 10*size);
+    txCircle (x + (dBetweenEars/2  )*size, y - 43*size, 10*size);
+
     txSetFillColor (RGB (238, 209, 111));
-    txCircle (x - (dBetweenEars/2-1)*size, y - 42*size,  8*size);
-    txCircle (x + (dBetweenEars/2-1)*size, y - 42*size,  8*size);
+    txCircle (x - (dBetweenEars/2-1)*size, y - 42*size, 8*size);
+    txCircle (x + (dBetweenEars/2-1)*size, y - 42*size, 8*size);
 
     txSetFillColor (RGB (177, 101, 54));
-    txCircle (x                          , y - 25*size, 25*size);
+    txCircle (x, y - 25*size, 25*size);
 
     txSetFillColor (colorEye);
-    txCircle (x -  8*size+dBetweenEyes   , y - 33*size,  4*size*radiusEyes);
-    txCircle (x +  8*size+dBetweenEyes   , y - 33*size,  4*size*radiusEyes);
+    txCircle (x - 8*size+dBetweenEyes, y - 33*size, 4*size*radiusEyes);
+    txCircle (x + 8*size+dBetweenEyes, y - 33*size, 4*size*radiusEyes);
 
     txSetFillColor (RGB (0, 0, 0));
-    txCircle (x -  8*size+dBetweenEyes   , y - 31*size,  2*size*radiusEyes);
-    txCircle (x +  8*size+dBetweenEyes   , y - 31*size,  2*size*radiusEyes);
+    txCircle (x - 8*size+dBetweenEyes, y - 31*size, 2*size*radiusEyes);
+    txCircle (x + 8*size+dBetweenEyes, y - 31*size, 2*size*radiusEyes);
 
     txSetColor     (RGB (0, 0, 0));
     txLine (x - 5*size, y - 25*size+noseY, x + 5*size, y - 25*size+noseY);
-    txLine (x         , y - 20*size+noseY, x + 5*size, y - 25*size+noseY);
-    txLine (x - 5*size, y - 25*size+noseY, x         , y - 20*size+noseY);
-    txFloodFill    (x         , y - 23*size+noseY);
+    txLine (x,          y - 20*size+noseY, x + 5*size, y - 25*size+noseY);
+    txLine (x - 5*size, y - 25*size+noseY, x,          y - 20*size+noseY);
+    txFloodFill    (x,  y - 23*size+noseY);
 
     txSetColor     (TX_RED);
     txSetFillColor (TX_RED);
-    txEllipse (x - 2*size, y - 15*size      , x + 2*size, y - 8*size);
+    txEllipse (x - 2*size, y - 15*size,     x + 2*size, y - 8*size);
 
     txSetColor     (RGB (255, 255, 255));
     txSetFillColor (RGB (177, 101, 54));
@@ -845,9 +834,9 @@ void BearDraw (int x, int y, double size,
     txCircle (x + rFoodX*size, y + rFoodY*size, 10*size);
 
     txSetFillColor (RGB (177, 101, 54));
-    txCircle (x,               y + 25*size, 25*size);
+    txCircle (x, y + 25*size, 25*size);
     txSetFillColor (RGB (238, 209, 111));
-    txCircle (x,               y + 13*size+dChestMove, 13*size);
+    txCircle (x, y + 13*size+dChestMove, 13*size);
     }
 
 //----------------------------------------------------------------------------
@@ -1030,10 +1019,18 @@ void BarrelDraw (double x, double y, double size)
     {
     txSetColor (TX_BLACK, 2);
     txSetFillColor (RGB (255, 204, 102));
-    txEllipse   (x,           y, x + 100*size       , y - 100*size);
+    txEllipse   (x,           y, x + 100*size,        y - 100*size);
     txEllipse   (x + 20*size, y, x + (100 - 20)*size, y - 100*size);
     txEllipse   (x + 40*size, y, x + (100 - 40)*size, y - 100*size);
     txSetFillColor (TX_BLACK);
-    txRectangle (x, y            , x + 100*size, y - 15*size        );
+    txRectangle (x, y,             x + 100*size, y - 15*size        );
     txRectangle (x, y - 100*size , x + 100*size, y - (100 - 15)*size);
+    }
+
+//-----------------------------------------------------------------------------
+void ClearScreen()
+    {
+    txSetColor     (TX_BLACK);
+    txSetFillColor (TX_BLACK);
+    txClear        ();
     }
