@@ -35,6 +35,10 @@ void BushDraw (int x, int y, double size);
 void CupTee (int x, int y, int orientation);
 void BeeHomeDraw (int x, int y, double size);
 
+void FlowerDraw (int x, int y, double size,
+                 COLORREF colorPetal, COLORREF colorCenter);
+
+
 //{-----------------------------------------------------------------------------
 //! Очищает экран заданным цветом (из списка базовых цветов библиотеки TXLib.h
 //!
@@ -420,7 +424,44 @@ void BearDraw (int x, int y, double size,
     txCircle (x, y + 13*size+dChestMove, 13*size);
     }
 
+//{-----------------------------------------------------------------------------
+//! Рисует цветок заданного размера и цвета самого цветка
+//!
+//! @param x           x - координата начальной точки (нижний конец стебля)
+//! @param y           y - координата начальной точки (нижний конец стебля)
+//! @param size        size - размер цветка
+//! @param colorPetal  colorPetal - цвет лепестков цветка
+//! @param colorCenter colorCenter - цвет серединки цветка
+//!
+//! @par  Пример использования:
+//! @code
+//!         FlowerDraw  (115, 555, 1.5, TX_BLUE, TX_ORANGE);
+//! @endcode
+//}-----------------------------------------------------------------------------
 
+void FlowerDraw (int x, int y, double size, COLORREF colorPetal, COLORREF colorCenter)
+    {
+    txSetFillColor (RGB (12, 118, 30));
+    txSetColor     (RGB (12, 118, 30),2);
+    txEllipse (x - 13*size, y -  3*size, x + 13*size, y +  3*size);
+    txLine    (x,           y,           x,           y - 48*size);
+
+    txSetFillColor (RGB (20, 198, 50));
+    txEllipse (x - 13*size, y - 23*size, x,           y - 20*size);
+    txEllipse (x + 13*size, y - 13*size, x,           y - 10*size);
+
+    txSetColor     (RGB (250, 220, 240));
+    txSetFillColor (colorPetal);
+    txCircle (x,          y - 43*size, 5*size);
+    txCircle (x,          y - 60*size, 5*size);
+    txCircle (x - 8*size, y - 48*size, 5*size);
+    txCircle (x + 8*size, y - 48*size, 5*size);
+    txCircle (x - 8*size, y - 55*size, 5*size);
+    txCircle (x + 8*size, y - 55*size, 5*size);
+
+    txSetFillColor (colorCenter);
+    txCircle (x,          y - 51*size, 6*size);
+    }
 
 
 
