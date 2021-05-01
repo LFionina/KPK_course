@@ -1,7 +1,13 @@
-//{=============================================================================
-//             (с) Фионина Людмила Евгеньевна, г. Самара, 2021
-//                 Задание: мультфильм "Медовая история"
-//}=============================================================================
+//{===========================================================================
+//! @file       Fionina_Lyudmila_multi.cpp
+//!
+//! @brief      Мультфильм "Медовая история".
+//!
+//!             Пример создания мультфильма с помощью TXLib.
+//!
+//!             $Date: 2021-05-01 $
+//          (C) Фионина Людмила Евгеньевна, г. Самара, 2021
+//}===========================================================================
 
 # include "TXLib.h"
 # include <stdlib.h>
@@ -72,23 +78,24 @@ void BearHeadDraw (int x, int y, double size);
 void BeeHeadDraw (int x, int y, int size);
 void TableDraw ();
 void TeeDrink ();
+void CupMove(int cupX, int step, int upDown);
 void CupTee (int x, int y, int orientation);
 void BearPawRight (int y);
 void BeePawLeft (int y);
 
-void ClearScreen();
+void ClearScreen(COLORREF colorBackGround);
 
 //----------------------------------------------------------------------------
 int main ()
     {
     txCreateWindow (1200, 700);
 
-    //TitleScreen ();
+    TitleScreen ();
     BeginScreen ();
-    //CenterScreen ();
-    //FinishScreen ();
-    //ScreamScreen ();
-    //FinalScreen ();
+    CenterScreen ();
+    FinishScreen ();
+    ScreamScreen ();
+    FinalScreen ();
 
     return 0;
     }
@@ -96,7 +103,7 @@ int main ()
 //============================================================================
 void TitleScreen ()
     {
-    ClearScreen();
+    ClearScreen(TX_BLACK);
 
     TitleFrameDraw (50);
 
@@ -156,7 +163,8 @@ void TitleTextDraw  (int t)
 //============================================================================
 void BeginScreen ()
     {
-    ClearScreen();
+    ClearScreen(TX_BLACK);
+
 
     SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "В одном лесу...");
     txSleep (500);
@@ -175,12 +183,12 @@ void BeginScreen ()
     GladeDraw (  0);
     txSleep (1000);
 
-
     SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "Пчёлки летают, медок собирают...");
     txSleep (500);
 
     BeeFly ();
     txSleep (500);
+
     }
 
 //----------------------------------------------------------------------------
@@ -259,7 +267,7 @@ void BeeMove (int vX, int vY, int xBeeOne, int xBeeTwo, int xBeeTree, int xBeeFo
         BeeDraw (xBeeFive + vX*t, 500 + vY*(t%2), 1.5);
         txSleep (150);
 
-        ClearScreen();
+        ClearScreen(TX_BLACK);
 
         BackGroundBeginScreen ();
         SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "Пчёлки летают, медок собирают...");
@@ -272,7 +280,7 @@ void BeeMove (int vX, int vY, int xBeeOne, int xBeeTwo, int xBeeTree, int xBeeFo
 //============================================================================
 void CenterScreen ()
     {
-    ClearScreen();
+    ClearScreen(TX_BLACK);
 
     BackGroundCenterScreen ();
 
@@ -334,7 +342,7 @@ void BearNoseEvesMove ()
     {
     txBegin ();
 
-    ClearScreen();
+    ClearScreen(TX_BLACK);
 
     BackGroundCenterScreen ();
 
@@ -356,7 +364,7 @@ void BearNoseEvesMove ()
 //============================================================================
 void FinishScreen ()
     {
-    ClearScreen();
+    ClearScreen(TX_BLACK);
 
     HoneySteal     (555, 455);
     BeeComeOutHome ();
@@ -390,7 +398,7 @@ void HoneySteal (int x, int y)
 
     while (t < 13)
         {
-        ClearScreen();
+        ClearScreen(TX_BLACK);
 
         BackGroundFinishScreen ();
 
@@ -455,22 +463,22 @@ void BeeComeOutHome   ()
 //============================================================================
 void ScreamScreen ()
     {
-    ClearScreen();
+    ClearScreen(TX_BLACK);
 
     SubTitlesDraw (500, 350, 140, "Bookman Old Style", TX_LIGHTRED, "A-A-A-Й");
     txSleep(1000);
 
-    ClearScreen();
+    ClearScreen(TX_BLACK);
 
     SubTitlesDraw (200, 150, 180, "Arial", TX_WHITE, "O-O-o-й");
     txSleep(1000);
 
-    ClearScreen();
+    ClearScreen(TX_BLACK);
 
     SubTitlesDraw (250, 200, 140, "Cornier New", TX_YELLOW, "По-мо-ги-те...");
     txSleep(1000);
 
-    ClearScreen();
+    ClearScreen(TX_BLACK);
 
     BackGroundFinishScreen ();
 
@@ -502,7 +510,7 @@ void BackGroundBeginScreen ()
 //============================================================================
 void FinalScreen ()
     {
-    ClearScreen();
+    ClearScreen(TX_BLACK);
 
     HomeBackground (90);
 
@@ -513,7 +521,7 @@ void FinalScreen ()
     TeeDrink  ();
     txSleep (500);
 
-    ClearScreen();
+    ClearScreen(TX_BLACK);
 
     TitleFrameDraw (50);
 
@@ -691,60 +699,46 @@ void TableDraw ()
     txSetFillColor (RGB (177, 101, 54));
     txCircle (300 - 20*6, 360 + 8*6, 10*5);
 
-    SubTitlesDraw (100, 645, 50, "Bookman Old Style", TX_BLACK, "И стали они жить дружно, мед кушать и сказки слушать...");
+    txSetColor     (TX_BLACK);
+    txSelectFont   ("Bookman Old Style", 50);
+    txTextOut      (100, 645, "И стали они жить дружно, мед кушать и сказки слушать...");
     }
 
 //-----------------------------------------------------------------------------
 void TeeDrink()
     {
-    int t = 390;
-    for (int countTeeDrink = 1; countTeeDrink < 4; countTeeDrink++)
+    for (int countTeeDrink = 1; countTeeDrink < 3; countTeeDrink++)
         {
-        t = 390;
-        while (t >= 260)
-            {
-            txSetColor     (TX_BLACK);
-            txSetFillColor (TX_BLACK);
-            txClear        ();
+        CupMove(390, -5, +1);
+        CupMove(260, +5, -1);
 
-            HomeBackground (90);
-            BearHeadDraw (300, 350, 6);
-            BeeHeadDraw  (900, 400, 5);
-            TableDraw ();
-
-            CupTee (400 - (390-t)/3, t + 50,  1);
-            BearPawRight(t);
-
-            CupTee (800 + (390-t)/3, 440 - (390-t)/2, -1);
-            BeePawLeft (t);
-            txSleep (100);
-            t -= 5;
-            }
-
-        t = 260;
-        while (t <= 390)
-            {
-            txSetColor     (TX_BLACK);
-            txSetFillColor (TX_BLACK);
-            txClear        ();
-
-            HomeBackground (90);
-            BearHeadDraw (300, 350, 6);
-            BeeHeadDraw  (900, 400, 5);
-            TableDraw ();
-
-            CupTee (400 - (390-t)/3, t + 50,  1);
-            BearPawRight (t);
-
-            CupTee (800 + (390-t)/3, 440 - (390-t)/2, -1);
-            BeePawLeft (t);
-            txSleep (100);
-            t += 5;
-            }
         txSleep (500);
         }
      }
 
+//-----------------------------------------------------------------------------
+void CupMove(int cupX, int step, int upDown)
+    {
+     while (cupX >= 260 and cupX <=390)
+        {
+        ClearScreen(TX_BLACK);
+
+        HomeBackground (90);
+        BearHeadDraw (300, 350, 6);
+        BeeHeadDraw  (900, 400, 5);
+        TableDraw ();
+
+        CupTee (400 - (390-cupX)/3, cupX + 50,  1);
+        BearPawRight(cupX);
+
+        CupTee (800 + (390-cupX)/3, 440 - (390-cupX)/2, -1);
+        BeePawLeft (cupX);
+        txSleep (100);
+
+        cupX += step;
+        }
+
+    }
 //-----------------------------------------------------------------------------
 void BearPawRight(int y)
     {
@@ -1020,9 +1014,9 @@ void BarrelDraw (double x, double y, double size)
     }
 
 //-----------------------------------------------------------------------------
-void ClearScreen()
+void ClearScreen(COLORREF colorBackGround)
     {
-    txSetColor     (TX_BLACK);
-    txSetFillColor (TX_BLACK);
+    txSetColor     (colorBackGround);
+    txSetFillColor (colorBackGround);
     txClear        ();
     }
