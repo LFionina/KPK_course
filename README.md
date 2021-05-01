@@ -31,9 +31,8 @@
 Библиотека основных персонажей мультфильма ** "Медовые истории" **.
 
 В библиотеку  добавлены следующие персонажи мультфильма:
-![image](https://user-images.githubusercontent.com/80356955/116790981-6b946300-aac8-11eb-9fee-1cfe832a3d7c.png)
-
+![image](https://user-images.githubusercontent.com/80356955/116791195-b2368d00-aac9-11eb-9bf4-b23d0438f28e.png)
 На рисунке указаны начальные точки рисования  объектов библиотеки.
 
 Кроме персонажей в библиотеку включены две функции - очистка экрана заданным цветом и  функция вывода субтитров.
-![image](https://user-images.githubusercontent.com/80356955/116791117-3c322600-aac9-11eb-982e-2b9af87380e5.png)
+![image](https://user-images.githubusercontent.com/80356955/116791203-c11d3f80-aac9-11eb-8a5e-6493267ae0f4.png)
