@@ -34,16 +34,11 @@ void BeeComeOutHome ();
 void BackGroundFinishScreen ();
 
 void ScreamScreen ();
-
 void BeeFly();
 void BeeMove (int vX, int vY, int xBeeOne, int xBeeTwo, int xBeeTree, int xBeeFour, int xBeeFive);
-
 void ForeGroundDraw ();
-
-void FlowerDraw  (int x, int y, double size,
-                  COLORREF colorPetal, COLORREF colorCenter);
-
 void BeeHomeFinishDraw (int x, int y, double size);
+
 void FinalScreen ();
 void HomeBackground (int heightY);
 void BearHeadDraw (int x, int y, double size);
@@ -729,29 +724,3 @@ void BeeHomeFinishDraw (int x, int y, double size)
     txRectangle (x + 10*size, y + 30*size, x + 30*size, y + 27*size);
     txCircle    (x + 20*size, y + 20*size, 3*size);
     }
-
-//----------------------------------------------------------------------------
-void FlowerDraw (int x, int y, double size, COLORREF colorPetal, COLORREF colorCenter)
-    {
-    txSetFillColor (RGB (12, 118, 30));
-    txSetColor     (RGB (12, 118, 30),2);
-    txEllipse (x - 13*size, y -  3*size, x + 13*size, y +  3*size);
-    txLine    (x,           y,           x,           y - 48*size);
-
-    txSetFillColor (RGB (20, 198, 50));
-    txEllipse (x - 13*size, y - 23*size, x,           y - 20*size);
-    txEllipse (x + 13*size, y - 13*size, x,           y - 10*size);
-
-    txSetColor     (RGB (250, 220, 240));
-    txSetFillColor (colorPetal);
-    txCircle (x,          y - 43*size, 5*size);
-    txCircle (x,          y - 60*size, 5*size);
-    txCircle (x - 8*size, y - 48*size, 5*size);
-    txCircle (x + 8*size, y - 48*size, 5*size);
-    txCircle (x - 8*size, y - 55*size, 5*size);
-    txCircle (x + 8*size, y - 55*size, 5*size);
-
-    txSetFillColor (colorCenter);
-    txCircle (x,          y - 51*size, 6*size);
-    }
-
