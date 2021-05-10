@@ -10,6 +10,7 @@
 //}===========================================================================
 
 # include "LFioninaLib.h"
+# include "BivenLib.h"
 # include "TXLib.h"
 # include <stdlib.h>
 
@@ -61,6 +62,10 @@ int main ()
     ScreamScreen ();
     FinalScreen ();
 
+    //Biven::SunDraw (400, 400, 4, 0.5, 1, 1, 1, 1, 1, 1);
+    //Biven::BoyDraw (100, 200, 3, 3, 1,
+    //          1,  1,  1,  1,
+    //          1, 1, 1, 1);
     return 0;
     }
 
@@ -150,9 +155,10 @@ void BeginScreen ()
     SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "ѕчЄлки летают, медок собирают...");
     txSleep (500);
 
+    txPlaySound ("bee.wav");
     BeeFly ();
     txSleep (500);
-
+    txPlaySound (NULL);
     }
 
 //----------------------------------------------------------------------------
@@ -198,8 +204,10 @@ void GladeDraw (int tSleep)
 //----------------------------------------------------------------------------
 void BeeFly ()
     {
+    txPlaySound ("soundBee.wav");
     BeeMove (+5, 5, 150, 250, 800, 950, 900);
     BeeMove (-5, 5, 200, 200, 850, 900, 950);
+    txPlaySound (NULL);
     }
 
 //----------------------------------------------------------------------------
@@ -208,7 +216,7 @@ void BeeMove (int vX, int vY, int xBeeOne, int xBeeTwo, int xBeeTree, int xBeeFo
     txBegin ();
 
     int t = 0;
-    while (t <= 11)
+    while (t <= 21)
         {
         BeeDraw (xBeeOne  + vX*t, 250 + vY*(t%2), 1  );
         BeeDraw (xBeeTwo  - vX*t, 350 + vY*(t%2), 1  );
@@ -379,6 +387,7 @@ void HoneySteal (int x, int y)
 //----------------------------------------------------------------------------
 void BeeComeOutHome   ()
     {
+    txPlaySound ("bee.wav");
     txBegin ();
 
     int t = 0;
@@ -409,6 +418,7 @@ void BeeComeOutHome   ()
         }
 
     txEnd();
+    txPlaySound (NULL);
     }
 
 //============================================================================
@@ -661,9 +671,11 @@ void TeeDrink()
     for (int countTeeDrink = 1; countTeeDrink < 3; countTeeDrink++)
         {
         CupMove(390, -5);
+        txPlaySound ("teeDrink.wav");
+        txSleep (300);
         CupMove(260, +5);
 
-        txSleep (500);
+        txSleep (600);
         }
      }
 
