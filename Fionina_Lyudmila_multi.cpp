@@ -50,22 +50,25 @@ void CupMove(int cupX, int step);
 void BearPawRight (int y);
 void BeePawLeft (int y);
 
+void BivenScreen ();
+void SunShines (int tSleep);
+void StarShipFly ();
+void ManGo ();
+void BuyAndSell ();
+
 //----------------------------------------------------------------------------
 int main ()
     {
     txCreateWindow (1200, 700);
 
-    TitleScreen ();
-    BeginScreen ();
-    CenterScreen ();
-    FinishScreen ();
-    ScreamScreen ();
-    FinalScreen ();
+    //TitleScreen ();
+    //BeginScreen ();
+    //CenterScreen ();
+    //FinishScreen ();
+    //ScreamScreen ();
+    BivenScreen ();
+    //FinalScreen ();
 
-    //Biven::SunDraw (400, 400, 4, 0.5, 1, 1, 1, 1, 1, 1);
-    //Biven::BoyDraw (100, 200, 3, 3, 1,
-    //          1,  1,  1,  1,
-    //          1, 1, 1, 1);
     return 0;
     }
 
@@ -736,3 +739,129 @@ void BeeHomeFinishDraw (int x, int y, double size)
     txRectangle (x + 10*size, y + 30*size, x + 30*size, y + 27*size);
     txCircle    (x + 20*size, y + 20*size, 3*size);
     }
+
+//{===========================================================================
+//!     НОВАЯ СЦЕНА С ИСПОЛЬЗОВАНИЕМ БИБЛИОТЕКИ Игоря Бочкарева
+//!
+//! персонажи: солнце, дерево, летающая тарелка, мужчина
+//}===========================================================================
+
+void BivenScreen ()
+    {
+    ClearScreen(RGB (0, 0, 0));
+
+    SunShines (600);
+    StarShipFly ();
+    ManGo ();
+    BuyAndSell ();
+
+
+
+
+
+
+
+    }
+//---------------------------------------------------------------------------
+void SunShines (int tSleep)
+    {
+    int t = 0;
+    while (t <= 4)
+        {
+        SubTitlesDraw (180, 630, 30, "Bookman Old Style", TX_YELLOW, "Однажды на полянку около теремка...");
+
+        ForestDraw  (0);
+        HomeDraw    (800, 350, 150, 160, 90, 0.7);
+
+        Biven::SunDraw (1100, 100, 1.8, 0.5+t%2*0.5, 1- t%2*0.5, 1, 1, 1, 1, 1);
+        t += 1;
+
+        if (tSleep != 0)
+            txSleep (tSleep);
+
+        ClearScreen(RGB (10, 10, 10));
+        }
+    }
+
+//---------------------------------------------------------------------------
+void StarShipFly ()
+    {
+    int t = 10;
+    while (t <= 280)
+        {
+        SubTitlesDraw (180, 630, 30, "Bookman Old Style", TX_YELLOW, "Прилетел инопланетный корабль...");
+
+        ForestDraw (0);
+        HomeDraw (800, 350, 150, 160, 90, 0.7);
+        BearDraw (765, 395, 2.0, TX_YELLOW, 0, 1, 0, 30, 5, 25, 0, 25, 0, 21, 47, 19, 47);
+
+        Biven::SunDraw (1100, 100, 1.8, 0.5+t%2*0.5, 1- t%2*0.5, 1, 1, 1, 1, 1);
+        Biven::StarShip (20 + t, 20 + t , 0.1 + t*0.005);
+        t += 10;
+
+        txSleep (200);
+
+        ClearScreen(RGB (10, 10, 10));
+        }
+    }
+
+//---------------------------------------------------------------------------
+void ManGo ()
+    {
+    int t = 0;
+    while (t <= 200)
+        {
+        SubTitlesDraw (180, 630, 30, "Bookman Old Style", TX_YELLOW, "Прослышали инопланетяне про чудесный медок и решили произвести обмен...");
+
+        ForestDraw (0);
+        HomeDraw (800, 350, 150, 160, 90, 0.7);
+        BearDraw (765, 395, 2.0, TX_YELLOW, 0, 1, 0, 30, 5, 25, 0, 25, 0, 21, 47, 19, 47);
+
+        Biven::SunDraw (1100, 100, 1.8, 0.5+t%2*0.5, 1- t%2*0.5, 1, 1, 1, 1, 1);
+        Biven::StarShip (300, 300, 0.1 + 280*0.005);
+
+
+        if (t % 2)
+            Biven::BoyDraw (400 + t, 350, 4, 4, 0,
+                 -5, +5, 1, 5,
+                  1,  1, 1, 1);
+        else
+            Biven::BoyDraw (400 + t, 350, 4, 4, 0,
+                   1,  1, 1, 1,
+                  +5, +5, 1, 5);
+
+        t += 15;
+        txSleep (600);
+
+        ClearScreen(RGB (10, 10, 10));
+        }
+    }
+
+//---------------------------------------------------------------------------
+void BuyAndSell ()
+    {
+    int t = 0;
+    while (t <= 200)
+        {
+        SubTitlesDraw (180, 630, 30, "Bookman Old Style", TX_YELLOW, "Мед на чудечные деревья со своей планеты...");
+
+        ForestDraw (0);
+        HomeDraw (800, 350, 150, 160, 90, 0.7);
+        BearDraw (765, 395, 2.0, TX_YELLOW, 0, 1, 0, 30, 5, 25, 0, 25, 0, 21, 47, 19, 47);
+
+        Biven::SunDraw (1100, 100, 1.8, 0.5+t%2*0.5, 1- t%2*0.5, 1, 1, 1, 1, 1);
+        Biven::StarShip (300, 300, 0.1 + 280*0.005);
+        Biven::BoyDraw (600, 350, 4, 4, 0,
+                        1,  1, 1, 1,
+                       +5, +5, 1, 5);
+        BarrelDraw  (737, 670, 1.5);
+
+
+        t += 15;
+        txSleep (600);
+
+        ClearScreen(RGB (10, 10, 10));
+        }
+    }
+
+
