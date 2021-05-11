@@ -56,16 +56,12 @@ int main ()
     txCreateWindow (1200, 700);
 
     TitleScreen ();
-    //BeginScreen ();
-    //CenterScreen ();
-    //FinishScreen ();
-    //ScreamScreen ();
-    //FinalScreen ();
+    BeginScreen ();
+    CenterScreen ();
+    FinishScreen ();
+    ScreamScreen ();
+    FinalScreen ();
 
-    Biven::SunDraw (400, 400, 4, 0.5, 1, 1, 1, 1, 1, 1);
-    Biven::BoyDraw (100, 200, 3, 3, 1,
-              1,  1,  1,  1,
-              1, 1, 1, 1);
     return 0;
     }
 
