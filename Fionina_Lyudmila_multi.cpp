@@ -55,19 +55,22 @@ void SunShines (int tSleep);
 void StarShipFly ();
 void ManGo ();
 void BuyAndSell ();
-
+void ManGoAgain ();
+void StarShipFlyAgain ();
+void NewForest ();
 //----------------------------------------------------------------------------
 int main ()
     {
     txCreateWindow (1200, 700);
 
-    //TitleScreen ();
-    //BeginScreen ();
-    //CenterScreen ();
-    //FinishScreen ();
-    //ScreamScreen ();
+    TitleScreen ();
+    BeginScreen ();
+    CenterScreen ();
+    FinishScreen ();
+    ScreamScreen ();
+    FinalScreen ();
+
     BivenScreen ();
-    //FinalScreen ();
 
     return 0;
     }
@@ -483,13 +486,7 @@ void FinalScreen ()
 
     TableDraw ();
     TeeDrink  ();
-    txSleep (500);
 
-    ClearScreen(TX_BLACK);
-
-    TitleFrameDraw (50);
-
-    SubTitlesDraw (400, 300, 100, "Bookman Old Style", TX_YELLOW, "К О Н Е Ц");
     txSleep (500);
     }
 
@@ -754,13 +751,16 @@ void BivenScreen ()
     StarShipFly ();
     ManGo ();
     BuyAndSell ();
+    ManGoAgain ();
+    StarShipFlyAgain ();
+    NewForest ();
 
+    ClearScreen(TX_BLACK);
 
+    TitleFrameDraw (50);
 
-
-
-
-
+    SubTitlesDraw (400, 300, 100, "Bookman Old Style", TX_YELLOW, "К О Н Е Ц");
+    txSleep (500);
     }
 //---------------------------------------------------------------------------
 void SunShines (int tSleep)
@@ -779,7 +779,7 @@ void SunShines (int tSleep)
         if (tSleep != 0)
             txSleep (tSleep);
 
-        ClearScreen(RGB (10, 10, 10));
+        ClearScreen(RGB (0, 0, 0));
         }
     }
 
@@ -801,7 +801,7 @@ void StarShipFly ()
 
         txSleep (200);
 
-        ClearScreen(RGB (10, 10, 10));
+        ClearScreen(RGB (0, 0, 0));
         }
     }
 
@@ -809,17 +809,19 @@ void StarShipFly ()
 void ManGo ()
     {
     int t = 0;
-    while (t <= 200)
+    while (t <= 180)
         {
+        ClearScreen(RGB (0, 0, 0));
+
         SubTitlesDraw (180, 630, 30, "Bookman Old Style", TX_YELLOW, "Прослышали инопланетяне про чудесный медок и решили произвести обмен...");
 
         ForestDraw (0);
         HomeDraw (800, 350, 150, 160, 90, 0.7);
-        BearDraw (765, 395, 2.0, TX_YELLOW, 0, 1, 0, 30, 5, 25, 0, 25, 0, 21, 47, 19, 47);
-
-        Biven::SunDraw (1100, 100, 1.8, 0.5+t%2*0.5, 1- t%2*0.5, 1, 1, 1, 1, 1);
+        Biven::SunDraw (1100, 100, 1.8, 0.5 + t%2*0.5, 1 - t%2*0.5, 1, 1, 1, 1, 1);
         Biven::StarShip (300, 300, 0.1 + 280*0.005);
 
+        BarrelDraw (650, 500, 0.7);
+        BearDraw (765, 395, 2.0, TX_YELLOW, 0, 1, 0, 30, 5, 25, 0, 25, 0, 21, 47, 19, 47);
 
         if (t % 2)
             Biven::BoyDraw (400 + t, 350, 4, 4, 0,
@@ -830,10 +832,10 @@ void ManGo ()
                    1,  1, 1, 1,
                   +5, +5, 1, 5);
 
+        Biven::TreeDraw (350 + t, 400, 1, 2);
+
         t += 15;
         txSleep (600);
-
-        ClearScreen(RGB (10, 10, 10));
         }
     }
 
@@ -841,27 +843,110 @@ void ManGo ()
 void BuyAndSell ()
     {
     int t = 0;
-    while (t <= 200)
+    while (t <= 170)
         {
+        ClearScreen(RGB (0, 0, 0));
+
         SubTitlesDraw (180, 630, 30, "Bookman Old Style", TX_YELLOW, "Мед на чудечные деревья со своей планеты...");
 
         ForestDraw (0);
         HomeDraw (800, 350, 150, 160, 90, 0.7);
-        BearDraw (765, 395, 2.0, TX_YELLOW, 0, 1, 0, 30, 5, 25, 0, 25, 0, 21, 47, 19, 47);
-
-        Biven::SunDraw (1100, 100, 1.8, 0.5+t%2*0.5, 1- t%2*0.5, 1, 1, 1, 1, 1);
+        Biven::SunDraw (1100, 100, 1.8, 0.5 + t%2*0.5, 1 - t%2*0.5, 1, 1, 1, 1, 1);
         Biven::StarShip (300, 300, 0.1 + 280*0.005);
-        Biven::BoyDraw (600, 350, 4, 4, 0,
-                        1,  1, 1, 1,
-                       +5, +5, 1, 5);
-        BarrelDraw  (737, 670, 1.5);
 
+        BarrelDraw (650 - t*0.3, 500 - t*0.2, 0.7 - t*0.0005);
+
+        BearDraw (765, 395, 2.0, TX_YELLOW, 0, 1, 0, 30, 5, 25, 0, 25, 0, 21, 47, 19, 47);
+        Biven::BoyDraw (400 + 180, 350, 4, 4, 0,
+                        1, 1, 1, 1,
+                        1, 1, 1, 1);
+
+        Biven::TreeDraw (350 + 180 + t, 400 + t*0.5 , 1 + t*0.002, 2 + t*0.008);
 
         t += 15;
-        txSleep (600);
-
-        ClearScreen(RGB (10, 10, 10));
+        txSleep (500);
         }
     }
 
+//---------------------------------------------------------------------------
+void ManGoAgain ()
+    {
+    int t = 0;
+    while (t <= 180)
+        {
+        ClearScreen(RGB (0, 0, 0));
 
+        SubTitlesDraw (180, 630, 30, "Bookman Old Style", TX_YELLOW, "Счастливые гости возвращаются обратно...");
+
+        ForestDraw (0);
+        HomeDraw (800, 350, 150, 160, 90, 0.7);
+        Biven::SunDraw (1100, 100, 1.8, 0.5 + t%2*0.25, 1 - t%2*0.5, 1, 1, 1, 1, 1);
+        Biven::StarShip (300, 300, 0.1 + 280*0.005);
+
+        BearDraw (765, 395, 2.0, TX_YELLOW, 0 + t%2, 1 + t%2*0.25, 0, 30, 5, 25, 0, 25, 0, 21, 47, 19, 47);
+        Biven::TreeDraw (350 + 180 + 165, 400 + 165*0.5 , 1 + 165*0.002, 2 + 165*0.008);
+
+        if (t % 2)
+            Biven::BoyDraw (400 + 180 - t, 350, 4, 4, 0,
+                  1,  1, 1, 1,
+                 -5, +5, 1, 5);
+        else
+            Biven::BoyDraw (400 + 180 - t, 350, 4, 4, 0,
+                   +5, +5, 1, 5,
+                    1,  1, 1, 1);
+
+        BarrelDraw (650 - 165*0.3 - t, 500 - 165*0.2, 0.7 - 165*0.0005);
+
+        t += 15;
+        txSleep (600);
+        }
+    }
+
+//---------------------------------------------------------------------------
+void StarShipFlyAgain ()
+    {
+    int t = 280;
+    while (t >= 10)
+        {
+        SubTitlesDraw (180, 630, 30, "Bookman Old Style", TX_YELLOW, "Гости улетели... Мишка долго махал им лапой...");
+
+        ForestDraw (0);
+        HomeDraw (800, 350, 150, 160, 90, 0.7);
+        BearDraw (765, 395, 2.0, TX_YELLOW, 0, 1, 0, 30, 5, 25, 0, 25 + (t%2)*5, 0 + (t%2)*5, 21, 47, 19, 47);
+        Biven::TreeDraw (350 + 180 + 165, 400 + 165*0.5 , 1 + 165*0.002, 2 + 165*0.008);
+
+        Biven::SunDraw (1100, 100, 1.8, 0.5+t%2*0.5, 1- t%2*0.5, 1, 1, 1, 1, 1);
+        Biven::StarShip (20 + t, 20 + t , 0.1 + t*0.005);
+        t -= 11;
+
+        txSleep (200);
+
+        ClearScreen(RGB (0, 0, 0));
+        }
+    }
+//---------------------------------------------------------------------------
+void NewForest ()
+    {
+    int t = 10;
+    while (t <= 200)
+        {
+        ClearScreen(RGB (0, 0, 0));
+
+        SubTitlesDraw (180, 630, 30, "Bookman Old Style", TX_YELLOW, "А подаренные деревца разрослись, напоминая о необычных гостях...");
+
+        ForestDraw (0);
+        HomeDraw (800, 350, 150, 160, 90, 0.7);
+        GladeDraw   (0);
+        Biven::SunDraw (1100, 100, 1.8, 0.5+t%2*0.5, 1- t%2*0.5, 1, 1, 1, 1, 1);
+
+        Biven::TreeDraw ( 50, 690, 1.33 + t*0.001, 3.32 + t*0.005);
+        Biven::TreeDraw (250, 620, 1.33 + t*0.003, 3.32 + t*0.003);
+        Biven::TreeDraw (100, 550, 1.33 + t*0.005, 3.32 + t*0.001);
+        Biven::TreeDraw (170, 650, 1.33 + t*0.008, 3.32 + t*0.001);
+
+        t += 10;
+
+        txSleep (100);
+        }
+    txSleep (100);
+    }
