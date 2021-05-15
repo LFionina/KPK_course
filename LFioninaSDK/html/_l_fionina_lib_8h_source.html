@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LFioninaLib: Исходный файл LFioninaLib.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">LFioninaLib
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">LFioninaLib.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_l_fionina_lib_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//{===========================================================================</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span><span class="comment">//}===========================================================================</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;TXLib.h&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___misc.html#gaa4593d9dce94d16e250360268bc647f3">ClearScreen</a>(COLORREF colorBackGround);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___misc.html#gaaf45e3ff99d0ce36882ca0aca54cf0a6">SubTitlesDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keywordtype">int</span> sizeFont, <span class="keyword">const</span> <span class="keywordtype">char</span> nameFont[],</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    COLORREF colorFont,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> text[]);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga0225bf3e137c3a06c7fd1ceed6014b22">TreeOneDraw</a> (<span class="keywordtype">int</span> x,  <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                  <span class="keywordtype">double</span> inclineX,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                  <span class="keywordtype">int</span> widthTree, <span class="keywordtype">int</span> heightTree,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                  <span class="keywordtype">int</span> pxLine,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                  <span class="keywordtype">int</span> colorLine, <span class="keywordtype">int</span> colorTree);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga7dd51441bf65b2253c08d183128dd0a6">BearDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;               COLORREF colorEye, <span class="keywordtype">double</span> dBetweenEyes, <span class="keywordtype">double</span> radiusEyes,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;               <span class="keywordtype">int</span> noseY,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;               <span class="keywordtype">int</span> dBetweenEars,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;               <span class="keywordtype">int</span> dChestMove,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;               <span class="keywordtype">int</span> lHandX, <span class="keywordtype">int</span> lHandY,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;               <span class="keywordtype">int</span> rHandX, <span class="keywordtype">int</span> rHandY,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;               <span class="keywordtype">int</span> lFoodX, <span class="keywordtype">int</span> lFoodY,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;               <span class="keywordtype">int</span> rFoodX, <span class="keywordtype">int</span> rFoodY);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga8d2770192265313171045cb04728f6b7">BarrelDraw</a> (<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> size);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga684087eab2eb426cfff2dab2e75adcf5">BeeDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga6f42a52011cba5fb487c6f76794eb371">BushDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#gac598318d0389cb2d9cc4d5c984201a97">CupTee</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> orientation);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga70929a2a57f4689b2ba30a44a9010533">BeeHomeDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga590882cce333fa03f4989f986784f3a1">FlowerDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                 COLORREF colorPetal, COLORREF colorCenter);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga4f690541189c6961b0b2d707d66a74d9">HomeDraw</a> (<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y,    <span class="keywordtype">int</span> heightRoof,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;               <span class="keywordtype">int</span> widthWindow, <span class="keywordtype">int</span> heightWindow, <span class="keywordtype">double</span> size);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="_l_fionina_lib_8h.html#a7f843734bddcd8148873963d768a8974">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_l_fionina_lib_8h.html#a7f843734bddcd8148873963d768a8974">ExampleOne</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="_l_fionina_lib_8h.html#a61e6759adcc47a11956dbcac1b067c3d">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_l_fionina_lib_8h.html#a61e6759adcc47a11956dbcac1b067c3d">ExampleTwo</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="group___misc.html#gaa4593d9dce94d16e250360268bc647f3">   87</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___misc.html#gaa4593d9dce94d16e250360268bc647f3">ClearScreen</a>(COLORREF colorBackGround)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    txSetColor     (colorBackGround);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    txSetFillColor (colorBackGround);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    txClear        ();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="group___misc.html#gaaf45e3ff99d0ce36882ca0aca54cf0a6">  113</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___misc.html#gaaf45e3ff99d0ce36882ca0aca54cf0a6">SubTitlesDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    <span class="keywordtype">int</span> sizeFont, <span class="keyword">const</span> <span class="keywordtype">char</span> nameFont[],</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    COLORREF colorFont,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> text[])</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    txSetColor     (TX_BLACK);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    txSetFillColor (TX_BLACK);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    txRectangle    (x, y, x + 500, y + 65);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    txSetColor     (colorFont);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    txSelectFont   (nameFont, sizeFont);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    txTextOut      (x + 10, y + 15, text);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="group___persons.html#ga8d2770192265313171045cb04728f6b7">  153</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga8d2770192265313171045cb04728f6b7">BarrelDraw</a> (<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> size)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    txSetColor (TX_BLACK, 2);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    txSetFillColor (RGB (255, 204, 102));</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    txEllipse   (x,           y, x + 100*size,        y - 100*size);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    txEllipse   (x + 20*size, y, x + (100 - 20)*size, y - 100*size);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    txEllipse   (x + 40*size, y, x + (100 - 40)*size, y - 100*size);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    txSetFillColor (TX_BLACK);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    txRectangle (x, y,             x + 100*size, y - 15*size        );</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    txRectangle (x, y - 100*size , x + 100*size, y - (100 - 15)*size);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="group___persons.html#ga684087eab2eb426cfff2dab2e75adcf5">  189</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga684087eab2eb426cfff2dab2e75adcf5">BeeDraw</a> (<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    txSetFillColor (RGB (30, 30, 0));</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    txSetColor     (RGB (255, 255, 0),3);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    txCircle  (x,          y - 5*size, 5*size);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    txEllipse (x - 5*size, y,          x + 5*size, y + 15*size);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    txSetColor     (RGB (255, 255, 0),2*size);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    txLine (x -  4*size, y +  5*size, x +  4*size, y +  5*size);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    txLine (x -  4*size, y + 10*size, x +  4*size, y + 10*size);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    txSetFillColor (RGB (185, 235, 225));</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    txSetColor     (RGB (50, 50, 0),2);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    txEllipse (x - 15*size, y, x, y +  6*size);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    txEllipse (x + 15*size, y, x, y +  6*size);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno"><a class="line" href="group___persons.html#ga4f690541189c6961b0b2d707d66a74d9">  232</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga4f690541189c6961b0b2d707d66a74d9">HomeDraw</a> (<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y,    <span class="keywordtype">int</span> heightRoof,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;               <span class="keywordtype">int</span> widthWindow, <span class="keywordtype">int</span> heightWindow, <span class="keywordtype">double</span> size)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    txSetColor     (RGB (177, 137, 77));</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    txSetFillColor (RGB (177, 137, 77));</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    txRectangle (x, y,            x + 300*size, y -  30*size);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    txRectangle (x, y -  35*size, x + 300*size, y -  65*size);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    txRectangle (x, y -  70*size, x + 300*size, y - 100*size);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    txRectangle (x, y - 105*size, x + 300*size, y - 135*size);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    txRectangle (x, y - 140*size, x + 300*size, y - 170*size);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    txSetFillColor (RGB (105, 81, 45));</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    txCircle (x +  20*size, y - 155*size, 18*size);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    txCircle (x + 280*size, y - 155*size, 18*size);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    txCircle (x +  20*size, y - 120*size, 18*size);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    txCircle (x + 280*size, y - 120*size, 18*size);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    txCircle (x +  20*size, y -  85*size, 18*size);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    txCircle (x + 280*size, y -  85*size, 18*size);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    txCircle (x +  20*size, y -  50*size, 18*size);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    txCircle (x + 280*size, y -  50*size, 18*size);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    txCircle (x +  20*size, y -  15*size, 18*size);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    txCircle (x + 280*size, y -  15*size, 18*size);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    txSetFillColor (RGB (114, 34, 54));</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    POINT roof[5] = {{int(x -  10*size), int(y - 175*size)               },</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                     {int(x + 310*size), int(y - 175*size)               },</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                     {int(x + 200*size), int(y - (175 + heightRoof)*size)},</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                     {int(x + 100*size), int(y - (175 + heightRoof)*size)},</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                     {int(x -  10*size), int(y - 175*size)}};</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    txPolygon (roof, 5);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    txSetFillColor (RGB (105, 81, 45));</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    txRectangle (x + 70*size, y - 130*size, x + (70+widthWindow)*size, y - (130-heightWindow)*size);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    txSetColor  (RGB (105, 81, 45));</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    txCircle (x + (70+widthWindow/16/2)*size,             y - (130-heightWindow/9/2)*size             , widthWindow/16*size);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    txCircle (x + (70+widthWindow/2)*size,                y - (130-heightWindow/9/2)*size             , widthWindow/16*size);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    txCircle (x + (70+widthWindow-widthWindow/16/2)*size, y - (130-heightWindow/9/2)*size             , widthWindow/16*size);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    txCircle (x + (70+widthWindow/16/2)*size,             y - (130-heightWindow/2)*size               , widthWindow/16*size);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    txCircle (x + (70+widthWindow-widthWindow/16/2)*size, y - (130-heightWindow/2)*size               , widthWindow/16*size);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    txCircle (x + (70+widthWindow/16/2)*size,             y - (130-heightWindow+heightWindow/9/2)*size, widthWindow/16*size);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    txCircle (x + (70+widthWindow/2)*size,                y - (130-heightWindow+heightWindow/9/2)*size, widthWindow/16*size);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    txCircle (x + (70+widthWindow-widthWindow/16/2)*size, y - (130-heightWindow+heightWindow/9/2)*size, widthWindow/16*size);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    txSetFillColor (RGB (185, 235, 225));</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    txRectangle (x + (70+widthWindow/16)*size                , y - (130-heightWindow/9)*size                 , x + (70+widthWindow/2-widthWindow/16/2)*size, y - (130-heightWindow/2+heightWindow/9/2)*size);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    txRectangle (x + (70+widthWindow/16)*size                , y - (130-heightWindow/2-heightWindow/9/2)*size, x + (70+widthWindow/2-widthWindow/16/2)*size, y - (130-heightWindow  +heightWindow/9)*size  );</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    txRectangle (x + (70+widthWindow/2+widthWindow/16/2)*size, y - (130-heightWindow/9)*size                 , x + (70+widthWindow  -widthWindow/16)*size  , y - (130-heightWindow/2+heightWindow/9/2)*size);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    txRectangle (x + (70+widthWindow/2+widthWindow/16/2)*size, y - (130-heightWindow/2-heightWindow/9/2)*size, x + (70+widthWindow  -widthWindow/16)*size  , y - (130-heightWindow  +heightWindow/9)*size  );</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="group___persons.html#gac598318d0389cb2d9cc4d5c984201a97">  310</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#gac598318d0389cb2d9cc4d5c984201a97">CupTee</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> orientation)</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    txSetColor     (RGB (120, 34,  95), 2);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    txSetFillColor (RGB (208, 92, 175));</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    POINT cup[11] = {{x - 40*orientation, y + 50},</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                     {x - 60*orientation, y - 50},</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                     {x + 60*orientation, y - 50},</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                     {x + 55*orientation, y - 25},</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                     {x + 90*orientation, y - 25},</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                     {x + 90*orientation, y + 30},</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                     {x + 70*orientation, y + 30},</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                     {x + 70*orientation, y - 10},</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                     {x + 50*orientation, y - 10},</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                     {x + 40*orientation, y + 50},</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                     {x - 40*orientation, y + 50}};</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    txPolygon (cup, 11);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="group___persons.html#ga70929a2a57f4689b2ba30a44a9010533">  354</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga70929a2a57f4689b2ba30a44a9010533">BeeHomeDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    txSetFillColor (RGB (215, 210, 190));</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    txSetColor     (RGB (102, 98, 80),2);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    txRectangle (x,           y,           x + 40*size, y + 35*size);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    txRectangle (x -  5*size, y,           x + 45*size, y -  5*size);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    txRectangle (x +  5*size, y + 35*size, x + 10*size, y + 40*size);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    txRectangle (x + 30*size, y + 35*size, x + 35*size, y + 40*size);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    txSetFillColor (RGB (102, 98, 80));</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    txRectangle (x + 10*size, y + 30*size, x + 30*size, y + 27*size);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    txCircle    (x + 20*size, y + 20*size, 3*size);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno"><a class="line" href="group___persons.html#ga6f42a52011cba5fb487c6f76794eb371">  392</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga6f42a52011cba5fb487c6f76794eb371">BushDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    txSetColor     (RGB (0, 245, 0), 2);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    txSetFillColor (RGB (0, 200, 0));</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    txCircle (x - 10*size, y, 18*size);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    txCircle (x + 10*size, y, 18*size);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    txSetFillColor (RGB (0, 250, 0));</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    txCircle (x,           y, 20*size);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    txSetColor     (RGB (177, 101, 54));</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    txLine (x, y + 20*size, x,           y);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    txLine (x, y + 20*size, x - 10*size, y);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    txLine (x, y + 20*size, x + 10*size, y);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
+<div class="line"><a name="l00438"></a><span class="lineno"><a class="line" href="group___persons.html#ga0225bf3e137c3a06c7fd1ceed6014b22">  438</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga0225bf3e137c3a06c7fd1ceed6014b22">TreeOneDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size, <span class="keywordtype">double</span> inclineX, <span class="keywordtype">int</span> widthTree, <span class="keywordtype">int</span> heightTree,</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                  <span class="keywordtype">int</span> pxLine, <span class="keywordtype">int</span> colorLine, <span class="keywordtype">int</span> colorTree)</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    {</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    txSetColor     (RGB (0, 255-colorLine, 0), pxLine);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    txSetFillColor (RGB (0, 255-colorTree, 0)        );</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    txLine (x + inclineX,         y,                     x - widthTree/2*size, y + heightTree*size  );</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    txLine (x + inclineX,         y,                     x + widthTree/2*size, y + heightTree*size  );</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    txLine (x - widthTree/2*size, y + heightTree*size,   x + widthTree/2*size, y + heightTree*size  );</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    txFloodFill (x, y + heightTree*size-5);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    txLine (x + inclineX/2,       y + heightTree*size,   x - widthTree/2*size, y + heightTree*2*size);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    txLine (x + inclineX/2,       y + heightTree*size,   x + widthTree/2*size, y + heightTree*2*size);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    txLine (x - widthTree/2*size, y + heightTree*2*size, x + widthTree/2*size, y + heightTree*2*size);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    txFloodFill (x, y + heightTree/2*3*size);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    txLine (x + inclineX/4,       y + heightTree*2*size, x + widthTree/2*size, y + heightTree*3*size);</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    txLine (x + inclineX/4,       y + heightTree*2*size, x - widthTree/2*size, y + heightTree*3*size);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    txLine (x - widthTree/2*size, y + heightTree*3*size, x + widthTree/2*size, y + heightTree*3*size);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    txFloodFill (x, y + heightTree/2*5*size);</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160; </div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    txSetColor     (RGB (177, 101, 54));</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    txSetFillColor (RGB (177, 101, 54));</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    txRectangle (x - widthTree/5*size, y + heightTree*3*size+1, x + widthTree/5*size, y + heightTree*3*size+heightTree/5);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    }</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160; </div>
+<div class="line"><a name="l00501"></a><span class="lineno"><a class="line" href="group___persons.html#ga7dd51441bf65b2253c08d183128dd0a6">  501</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga7dd51441bf65b2253c08d183128dd0a6">BearDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size,</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;               COLORREF colorEye, <span class="keywordtype">double</span> dBetweenEyes, <span class="keywordtype">double</span> radiusEyes,</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;               <span class="keywordtype">int</span> noseY, <span class="keywordtype">int</span> dBetweenEars, <span class="keywordtype">int</span> dChestMove,</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;               <span class="keywordtype">int</span> lHandX, <span class="keywordtype">int</span> lHandY, <span class="keywordtype">int</span> rHandX, <span class="keywordtype">int</span> rHandY,</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;               <span class="keywordtype">int</span> lFoodX, <span class="keywordtype">int</span> lFoodY,<span class="keywordtype">int</span> rFoodX, <span class="keywordtype">int</span> rFoodY)</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    {</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    txSetColor     (TX_WHITE);</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    txSetFillColor (RGB (177, 101, 54));</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    txCircle (x - (dBetweenEars/2  )*size, y - 43*size, 10*size);</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    txCircle (x + (dBetweenEars/2  )*size, y - 43*size, 10*size);</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    txSetFillColor (RGB (238, 209, 111));</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    txCircle (x - (dBetweenEars/2-1)*size, y - 42*size, 8*size);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    txCircle (x + (dBetweenEars/2-1)*size, y - 42*size, 8*size);</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    txSetFillColor (RGB (177, 101, 54));</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    txCircle (x, y - 25*size, 25*size);</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    txSetFillColor (colorEye);</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    txCircle (x - 8*size+dBetweenEyes, y - 33*size, 4*size*radiusEyes);</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    txCircle (x + 8*size+dBetweenEyes, y - 33*size, 4*size*radiusEyes);</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    txSetFillColor (RGB (0, 0, 0));</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    txCircle (x - 8*size+dBetweenEyes, y - 31*size, 2*size*radiusEyes);</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    txCircle (x + 8*size+dBetweenEyes, y - 31*size, 2*size*radiusEyes);</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    txSetColor     (RGB (0, 0, 0));</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    txLine (x - 5*size, y - 25*size+noseY, x + 5*size, y - 25*size+noseY);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    txLine (x,          y - 20*size+noseY, x + 5*size, y - 25*size+noseY);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    txLine (x - 5*size, y - 25*size+noseY, x,          y - 20*size+noseY);</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    txFloodFill    (x,  y - 23*size+noseY);</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160; </div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    txSetColor     (TX_RED);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    txSetFillColor (TX_RED);</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    txEllipse (x - 2*size, y - 15*size, x + 2*size, y - 8*size);</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160; </div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    txSetColor     (RGB (255, 255, 255));</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    txSetFillColor (RGB (177, 101, 54));</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    txCircle (x - lHandX*size, y + lHandY*size, 10*size);</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    txCircle (x + rHandX*size, y + rHandY*size, 10*size);</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160; </div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    txSetFillColor (RGB (177, 101, 54));</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    txCircle (x - lFoodX*size, y + lFoodY*size, 10*size);</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    txCircle (x + rFoodX*size, y + rFoodY*size, 10*size);</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160; </div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    txSetFillColor (RGB (177, 101, 54));</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    txCircle (x, y + 25*size, 25*size);</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    txSetFillColor (RGB (238, 209, 111));</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    txCircle (x, y + 13*size+dChestMove, 13*size);</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    }</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160; </div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;<span class="comment">//{-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="comment"></span><span class="comment">//}-----------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
+<div class="line"><a name="l00577"></a><span class="lineno"><a class="line" href="group___persons.html#ga590882cce333fa03f4989f986784f3a1">  577</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group___persons.html#ga590882cce333fa03f4989f986784f3a1">FlowerDraw</a> (<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">double</span> size, COLORREF colorPetal, COLORREF colorCenter)</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    {</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    txSetFillColor (RGB (12, 118, 30));</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    txSetColor     (RGB (12, 118, 30),2);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    txEllipse (x - 13*size, y -  3*size, x + 13*size, y +  3*size);</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    txLine    (x,           y,           x,           y - 48*size);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    txSetFillColor (RGB (20, 198, 50));</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    txEllipse (x - 13*size, y - 23*size, x,           y - 20*size);</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    txEllipse (x + 13*size, y - 13*size, x,           y - 10*size);</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    txSetColor     (RGB (250, 220, 240));</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    txSetFillColor (colorPetal);</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    txCircle (x,          y - 43*size, 5*size);</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    txCircle (x,          y - 60*size, 5*size);</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    txCircle (x - 8*size, y - 48*size, 5*size);</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    txCircle (x + 8*size, y - 48*size, 5*size);</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    txCircle (x - 8*size, y - 55*size, 5*size);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    txCircle (x + 8*size, y - 55*size, 5*size);</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    txSetFillColor (colorCenter);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    txCircle (x,          y - 51*size, 6*size);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    }</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
+<div class="ttc" id="a_l_fionina_lib_8h_html_a61e6759adcc47a11956dbcac1b067c3d"><div class="ttname"><a href="_l_fionina_lib_8h.html#a61e6759adcc47a11956dbcac1b067c3d">ExampleTwo</a></div><div class="ttdeci">void ExampleTwo()</div></div>
+<div class="ttc" id="a_l_fionina_lib_8h_html_a7f843734bddcd8148873963d768a8974"><div class="ttname"><a href="_l_fionina_lib_8h.html#a7f843734bddcd8148873963d768a8974">ExampleOne</a></div><div class="ttdeci">void ExampleOne()</div></div>
+<div class="ttc" id="agroup___misc_html_gaa4593d9dce94d16e250360268bc647f3"><div class="ttname"><a href="group___misc.html#gaa4593d9dce94d16e250360268bc647f3">ClearScreen</a></div><div class="ttdeci">void ClearScreen(COLORREF colorBackGround)</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00087">LFioninaLib.h:87</a></div></div>
+<div class="ttc" id="agroup___misc_html_gaaf45e3ff99d0ce36882ca0aca54cf0a6"><div class="ttname"><a href="group___misc.html#gaaf45e3ff99d0ce36882ca0aca54cf0a6">SubTitlesDraw</a></div><div class="ttdeci">void SubTitlesDraw(int x, int y, int sizeFont, const char nameFont[], COLORREF colorFont, const char text[])</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00113">LFioninaLib.h:113</a></div></div>
+<div class="ttc" id="agroup___persons_html_ga0225bf3e137c3a06c7fd1ceed6014b22"><div class="ttname"><a href="group___persons.html#ga0225bf3e137c3a06c7fd1ceed6014b22">TreeOneDraw</a></div><div class="ttdeci">void TreeOneDraw(int x, int y, double size, double inclineX, int widthTree, int heightTree, int pxLine, int colorLine, int colorTree)</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00438">LFioninaLib.h:438</a></div></div>
+<div class="ttc" id="agroup___persons_html_ga4f690541189c6961b0b2d707d66a74d9"><div class="ttname"><a href="group___persons.html#ga4f690541189c6961b0b2d707d66a74d9">HomeDraw</a></div><div class="ttdeci">void HomeDraw(double x, double y, int heightRoof, int widthWindow, int heightWindow, double size)</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00232">LFioninaLib.h:232</a></div></div>
+<div class="ttc" id="agroup___persons_html_ga590882cce333fa03f4989f986784f3a1"><div class="ttname"><a href="group___persons.html#ga590882cce333fa03f4989f986784f3a1">FlowerDraw</a></div><div class="ttdeci">void FlowerDraw(int x, int y, double size, COLORREF colorPetal, COLORREF colorCenter)</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00577">LFioninaLib.h:577</a></div></div>
+<div class="ttc" id="agroup___persons_html_ga684087eab2eb426cfff2dab2e75adcf5"><div class="ttname"><a href="group___persons.html#ga684087eab2eb426cfff2dab2e75adcf5">BeeDraw</a></div><div class="ttdeci">void BeeDraw(int x, int y, double size)</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00189">LFioninaLib.h:189</a></div></div>
+<div class="ttc" id="agroup___persons_html_ga6f42a52011cba5fb487c6f76794eb371"><div class="ttname"><a href="group___persons.html#ga6f42a52011cba5fb487c6f76794eb371">BushDraw</a></div><div class="ttdeci">void BushDraw(int x, int y, double size)</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00392">LFioninaLib.h:392</a></div></div>
+<div class="ttc" id="agroup___persons_html_ga70929a2a57f4689b2ba30a44a9010533"><div class="ttname"><a href="group___persons.html#ga70929a2a57f4689b2ba30a44a9010533">BeeHomeDraw</a></div><div class="ttdeci">void BeeHomeDraw(int x, int y, double size)</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00354">LFioninaLib.h:354</a></div></div>
+<div class="ttc" id="agroup___persons_html_ga7dd51441bf65b2253c08d183128dd0a6"><div class="ttname"><a href="group___persons.html#ga7dd51441bf65b2253c08d183128dd0a6">BearDraw</a></div><div class="ttdeci">void BearDraw(int x, int y, double size, COLORREF colorEye, double dBetweenEyes, double radiusEyes, int noseY, int dBetweenEars, int dChestMove, int lHandX, int lHandY, int rHandX, int rHandY, int lFoodX, int lFoodY, int rFoodX, int rFoodY)</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00501">LFioninaLib.h:501</a></div></div>
+<div class="ttc" id="agroup___persons_html_ga8d2770192265313171045cb04728f6b7"><div class="ttname"><a href="group___persons.html#ga8d2770192265313171045cb04728f6b7">BarrelDraw</a></div><div class="ttdeci">void BarrelDraw(double x, double y, double size)</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00153">LFioninaLib.h:153</a></div></div>
+<div class="ttc" id="agroup___persons_html_gac598318d0389cb2d9cc4d5c984201a97"><div class="ttname"><a href="group___persons.html#gac598318d0389cb2d9cc4d5c984201a97">CupTee</a></div><div class="ttdeci">void CupTee(int x, int y, int orientation)</div><div class="ttdef"><b>Definition:</b> <a href="_l_fionina_lib_8h_source.html#l00310">LFioninaLib.h:310</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

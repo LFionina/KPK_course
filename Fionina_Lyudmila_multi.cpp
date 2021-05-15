@@ -8,11 +8,11 @@
 //!             $Date: 2021-05-01 $
 //          (C) Фионина Людмила Евгеньевна, г. Самара, 2021
 //}===========================================================================
-
-# include "LFioninaLib.h"
-# include "BivenLib.h"
 # include "TXLib.h"
 # include <stdlib.h>
+
+# include "LFioninaSDK\LFioninaLib.h"
+# include "Include\BivenLib.h"
 
 void TitleScreen ();
 void TitleFrameDraw (int x);
@@ -161,10 +161,8 @@ void BeginScreen ()
     SubTitlesDraw (180, 590, 30, "Bookman Old Style", TX_YELLOW, "Пчёлки летают, медок собирают...");
     txSleep (500);
 
-    txPlaySound ("bee.wav");
     BeeFly ();
     txSleep (500);
-    txPlaySound (NULL);
     }
 
 //----------------------------------------------------------------------------
@@ -210,7 +208,7 @@ void GladeDraw (int tSleep)
 //----------------------------------------------------------------------------
 void BeeFly ()
     {
-    txPlaySound ("soundBee.wav");
+    txPlaySound ("Sounds/soundBee.wav");
     BeeMove (+5, 5, 150, 250, 800, 950, 900);
     BeeMove (-5, 5, 200, 200, 850, 900, 950);
     txPlaySound (NULL);
@@ -393,7 +391,7 @@ void HoneySteal (int x, int y)
 //----------------------------------------------------------------------------
 void BeeComeOutHome   ()
     {
-    txPlaySound ("bee.wav");
+    txPlaySound ("Sounds/bee.wav");
     txBegin ();
 
     int t = 0;
@@ -671,7 +669,7 @@ void TeeDrink()
     for (int countTeeDrink = 1; countTeeDrink < 3; countTeeDrink++)
         {
         CupMove(390, -5);
-        txPlaySound ("teeDrink.wav");
+        txPlaySound ("Sounds/teeDrink.wav");
         txSleep (300);
         CupMove(260, +5);
 
