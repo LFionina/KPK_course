@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Исходный файл Examples/Example_1.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_03680f297d755c096b0a1ead13ee12b7.html">Examples</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Example_1.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_example__1_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_detkova_l_a_lib_8h.html">DetkovaLAlib.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="_example__1_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    3</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_example__1_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    txCreateWindow (1024, 648);</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    txSetFillColor (TX_WHITE);</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    txRectangle    (0,   0, 1024, 648);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="_detkova_l_a_lib_8h.html#aadb3593226a0c86878d26a1ec04e4c90">DrawSun</a>   (850, 105, 1, 1, TX_YELLOW, 1, 1, 0, 1, 0);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="_detkova_l_a_lib_8h.html#a9cee6864ab426f7573cfdaf802fe3a41">DrawCloud</a> ( 50, 150, 1, 1, TX_LIGHTCYAN);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="_detkova_l_a_lib_8h.html#a9cee6864ab426f7573cfdaf802fe3a41">DrawCloud</a> (300,  50, 1, 1, TX_LIGHTCYAN);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="_detkova_l_a_lib_8h.html#a9cee6864ab426f7573cfdaf802fe3a41">DrawCloud</a> (550, 200, 1, 1, TX_LIGHTCYAN);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="_detkova_l_a_lib_8h.html#a828fc28dc28a97c1c0c1183ea51414d1">DrawCat</a>   (100, 500, 3, 3, RGB(255, 69, 0), RGB(0, 0, 255), 1, 1, 1, 1, 1, 0);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="_detkova_l_a_lib_8h.html#a2f46035230b7dd3580d0d468b9962c13">DrawGirl</a>  (300, 500, 1, 1, RGB(221, 160, 221), RGB(218, 105, 30), RGB(255, 0, 255), 0, 0, 0, 0, 5, 1, 1, 0, 0, 0, 0);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="_detkova_l_a_lib_8h.html#afc6461a42f0c6018009c43b2751c98a9">DrawBoy</a>   (500, 500, 1, 1, RGB(221, 160, 221), RGB(218, 105, 30), RGB(  0, 0, 255), 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 1);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="_detkova_l_a_lib_8h.html#a07470fa97dae13c64444021e46fb0391">DrawHowse</a> (600, 400, 1, 1, RGB(255, 255, 224), RGB(139, 0, 0), RGB(0, 0, 0), 0, 0, 0, 0, 0);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="_detkova_l_a_lib_8h.html#a64e3f5afd91edc49ee6f6e6d1282c37a">DrawFlower</a> (600,  600, 1, 1, RGB(255, 0, 0), RGB(255, 255, 255), 1, 1);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="ttc" id="a_detkova_l_a_lib_8h_html"><div class="ttname"><a href="_detkova_l_a_lib_8h.html">DetkovaLALib.h</a></div></div>
+<div class="ttc" id="a_detkova_l_a_lib_8h_html_a07470fa97dae13c64444021e46fb0391"><div class="ttname"><a href="_detkova_l_a_lib_8h.html#a07470fa97dae13c64444021e46fb0391">DrawHowse</a></div><div class="ttdeci">void DrawHowse(int x, int y, double sizex, double sizey, COLORREF stenaColor, COLORREF kryshaColor, COLORREF oknoColor, double krysha, double okno, double truba, double dym, double door)</div><div class="ttdef"><b>Definition:</b> <a href="_detkova_l_a_lib_8h_source.html#l00088">DetkovaLALib.h:88</a></div></div>
+<div class="ttc" id="a_detkova_l_a_lib_8h_html_a2f46035230b7dd3580d0d468b9962c13"><div class="ttname"><a href="_detkova_l_a_lib_8h.html#a2f46035230b7dd3580d0d468b9962c13">DrawGirl</a></div><div class="ttdeci">void DrawGirl(int x, int y, double sizex, double sizey, COLORREF headColor, COLORREF hearColor, COLORREF torsoColor, double rhand, double lhand, double legs, double crazy, double smile, double eyes, double platie, double topleftleg, double toprightleg, double nos, double hear)</div><div class="ttdef"><b>Definition:</b> <a href="_detkova_l_a_lib_8h_source.html#l00315">DetkovaLALib.h:315</a></div></div>
+<div class="ttc" id="a_detkova_l_a_lib_8h_html_a64e3f5afd91edc49ee6f6e6d1282c37a"><div class="ttname"><a href="_detkova_l_a_lib_8h.html#a64e3f5afd91edc49ee6f6e6d1282c37a">DrawFlower</a></div><div class="ttdeci">void DrawFlower(int x, int y, double sizex, double sizey, COLORREF lepestkiColor, COLORREF serdcevinaColor, int list, int naklon)</div><div class="ttdef"><b>Definition:</b> <a href="_detkova_l_a_lib_8h_source.html#l00460">DetkovaLALib.h:460</a></div></div>
+<div class="ttc" id="a_detkova_l_a_lib_8h_html_a828fc28dc28a97c1c0c1183ea51414d1"><div class="ttname"><a href="_detkova_l_a_lib_8h.html#a828fc28dc28a97c1c0c1183ea51414d1">DrawCat</a></div><div class="ttdeci">void DrawCat(int x, int y, double sizex, double sizey, COLORREF catColor, COLORREF eyesColor, double legs, double hvost, double ushky, double usy, double smile, double eyes)</div><div class="ttdef"><b>Definition:</b> <a href="_detkova_l_a_lib_8h_source.html#l00598">DetkovaLALib.h:598</a></div></div>
+<div class="ttc" id="a_detkova_l_a_lib_8h_html_a9cee6864ab426f7573cfdaf802fe3a41"><div class="ttname"><a href="_detkova_l_a_lib_8h.html#a9cee6864ab426f7573cfdaf802fe3a41">DrawCloud</a></div><div class="ttdeci">void DrawCloud(int x, int y, double sizex, double sizey, COLORREF cloudColor)</div><div class="ttdef"><b>Definition:</b> <a href="_detkova_l_a_lib_8h_source.html#l00166">DetkovaLALib.h:166</a></div></div>
+<div class="ttc" id="a_detkova_l_a_lib_8h_html_aadb3593226a0c86878d26a1ec04e4c90"><div class="ttname"><a href="_detkova_l_a_lib_8h.html#aadb3593226a0c86878d26a1ec04e4c90">DrawSun</a></div><div class="ttdeci">void DrawSun(int x, int y, double sizex, double sizey, COLORREF sunColor, int rays, int eyes, int smile, int eyebrows, int rumyna)</div><div class="ttdef"><b>Definition:</b> <a href="_detkova_l_a_lib_8h_source.html#l00245">DetkovaLALib.h:245</a></div></div>
+<div class="ttc" id="a_detkova_l_a_lib_8h_html_afc6461a42f0c6018009c43b2751c98a9"><div class="ttname"><a href="_detkova_l_a_lib_8h.html#afc6461a42f0c6018009c43b2751c98a9">DrawBoy</a></div><div class="ttdeci">void DrawBoy(int x, int y, double sizex, double sizey, COLORREF headColor, COLORREF hearColor, COLORREF torsoColor, double rhand, double lhand, double legs, double crazy, double smile, int eyes, double topleftleg, double toprightleg, double nos, double hear, double brovy)</div><div class="ttdef"><b>Definition:</b> <a href="_detkova_l_a_lib_8h_source.html#l00394">DetkovaLALib.h:394</a></div></div>
+<div class="ttc" id="a_example__1_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="_example__1_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="_example__1_8cpp_source.html#l00003">Example_1.cpp:3</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
